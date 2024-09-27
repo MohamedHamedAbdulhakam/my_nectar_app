@@ -52,7 +52,7 @@ class OnBoardingViewBody extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               
               // Subheading Text
               const Text(
@@ -67,7 +67,7 @@ class OnBoardingViewBody extends StatelessWidget {
               
               // Spacer for alignment
          
-                 SizedBox(height: 40),
+                 const SizedBox(height: 40),
               // Get Started Button
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40.0),
