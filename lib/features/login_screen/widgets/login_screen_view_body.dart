@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/constants.dart';
+import 'package:my_nectar_app/core/utils/app_router.dart';
+import 'package:my_nectar_app/features/login_screen/widgets/custom_button.dart';
 
 class LoginScreenViewBody extends StatelessWidget {
   const LoginScreenViewBody({super.key});
@@ -15,9 +18,12 @@ class LoginScreenViewBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              // Logo
-
-              const SizedBox(height: 20),
+              Image.asset(
+                'assets/Group.png',
+                height: 55,
+                width: 47,
+              ),
+              const SizedBox(height: 100),
 
               // Title
               const Text(
@@ -68,27 +74,17 @@ class LoginScreenViewBody extends StatelessWidget {
                   onPressed: () {
                     // Handle forgot password action
                   },
-                  child: const Text('Forgot Password?'),
+                  child: GestureDetector(
+                    onTap: () {
+                     GoRouter.of(context).push(AppRouter.keyforgetpassword);
+                    },
+                    child: const Text('Forgot Password?')),
                 ),
               ),
               const SizedBox(height: 20),
 
               // Login Button
-              ElevatedButton(
-                onPressed: () {
-                  // Handle login action
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  backgroundColor: KeyPrimaryColor,
-                  padding: const EdgeInsets.symmetric(vertical: 15),
-                  minimumSize: const Size(double.infinity, 65),
-                ),
-                child: const Text('Log In',
-                    style: TextStyle(fontSize: 18, color: Colors.white)),
-              ),
+              const CustomButton(text: 'Login In'),
               const SizedBox(height: 20),
 
               // Signup Link
