@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_nectar_app/constants.dart';
 
 class LoginScreenViewBody extends StatelessWidget {
   const LoginScreenViewBody({super.key});
@@ -20,21 +21,29 @@ class LoginScreenViewBody extends StatelessWidget {
 
               // Title
               const Text(
-                'Login',
+                'Loging ',
                 style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),
-                textAlign: TextAlign.center,
+                // textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 10),
-
+              const SizedBox(height: 5),
+              const Text(
+                'Enter your email and passowrd',
+                style: TextStyle(
+                  fontSize: 13,
+                  // fontWeight: FontWeight.bold,
+                ),
+                // textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 30),
               // Email Input
               const TextField(
                 decoration: InputDecoration(
                   labelText: 'Email',
                   hintText: 'Enter your email',
-                  border: OutlineInputBorder(),
+                  // border: OutlineInputBorder(),
                 ),
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -46,7 +55,7 @@ class LoginScreenViewBody extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: 'Password',
                   hintText: 'Enter your password',
-                  border: OutlineInputBorder(),
+                  // border: OutlineInputBorder(),
                   suffixIcon: Icon(Icons.visibility_off),
                 ),
               ),
@@ -70,10 +79,15 @@ class LoginScreenViewBody extends StatelessWidget {
                   // Handle login action
                 },
                 style: ElevatedButton.styleFrom(
-                  // background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  backgroundColor: KeyPrimaryColor,
                   padding: const EdgeInsets.symmetric(vertical: 15),
+                  minimumSize: const Size(double.infinity, 65),
                 ),
-                child: const Text('Log In', style: TextStyle(fontSize: 18)),
+                child: const Text('Log In',
+                    style: TextStyle(fontSize: 18, color: Colors.white)),
               ),
               const SizedBox(height: 20),
 
@@ -86,6 +100,7 @@ class LoginScreenViewBody extends StatelessWidget {
                   child: const Text.rich(
                     TextSpan(
                       text: "Don’t have an account? ",
+                      style: TextStyle(color: Colors.black),
                       children: [
                         TextSpan(
                           text: "Sign Up",

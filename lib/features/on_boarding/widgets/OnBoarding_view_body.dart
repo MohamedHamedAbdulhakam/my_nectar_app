@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/constants.dart';
+import 'package:my_nectar_app/core/utils/app_router.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
@@ -81,7 +83,7 @@ class OnBoardingViewBody extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: ElevatedButton(
                 onPressed: () {
-                  // Button action
+                   GoRouter.of(context).push(AppRouter.keyloginview);
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: KeyPrimaryColor,
