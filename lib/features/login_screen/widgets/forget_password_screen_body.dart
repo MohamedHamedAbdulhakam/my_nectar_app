@@ -9,69 +9,84 @@ class ForgetPasswordScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              const Align(
-                  alignment: Alignment.topLeft,
-                  child: Icon(Icons.arrow_back_ios_new)),
-              Image.asset(
-                'assets/Group.png',
-                height: 55,
-                width: 47,
-              ),
-              const SizedBox(height: 100),
-
-              // Title
-              const Text(
-                'Forget Password ',
-                style: TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold,
-                ),
-                // textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 5),
-              const Text(
-                'Enter your email for verification process we will send 5 digits code to your email',
-                style: TextStyle(
-                  fontSize: 13,
-                  // fontWeight: FontWeight.bold,
-                ),
-                // textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 50),
-              // Email Input
-              const TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email',
-                  // border: OutlineInputBorder(),
-                ),
-                keyboardType: TextInputType.emailAddress,
-              ),
-              const SizedBox(height: 20),
-
-              // Password Input
-
-              const SizedBox(height: 10),
-
-              // Forgot Password
-
-              const SizedBox(height: 40),
-
-              // Login Button
-              const CustomButton(text: 'Countinue'),
-
-              // Signup Link
-            ],
+      body: Stack(
+        children:[ 
+               Container(
+          // width:100,
+          // height: 400,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/Mask Group.jpg'),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
-      ),
+          Positioned(
+            top: 30,
+            left: 10,
+            child: Icon(Icons.arrow_back_ios_new)),
+          Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+              
+                Image.asset(
+                  'assets/Group.png',
+                  height: 55,
+                  width: 47,
+                ),
+                const SizedBox(height: 100),
+        
+                // Title
+                const Text(
+                  'Forget Password ',
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  // textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 5),
+                const Text(
+                  'Enter your email for verification process we will send 5 digits code to your email',
+                  style: TextStyle(
+                    fontSize: 13,
+                    // fontWeight: FontWeight.bold,
+                  ),
+                  // textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 50),
+                // Email Input
+                const TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                    // border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                const SizedBox(height: 20),
+        
+                // Password Input
+        
+                const SizedBox(height: 10),
+        
+                // Forgot Password
+        
+                const SizedBox(height: 40),
+        
+                // Login Button
+                const CustomButton(text: 'Countinue'),
+        
+                // Signup Link
+              ],
+            ),
+          ),
+        ),
+     ] ),
     );
   }
 }
