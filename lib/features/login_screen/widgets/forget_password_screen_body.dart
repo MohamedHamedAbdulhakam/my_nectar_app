@@ -9,9 +9,8 @@ class ForgetPasswordScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        children:[ 
-               Container(
+      body: Stack(children: [
+        Container(
           // width:100,
           // height: 400,
           decoration: const BoxDecoration(
@@ -21,27 +20,27 @@ class ForgetPasswordScreenBody extends StatelessWidget {
             ),
           ),
         ),
-          Positioned(
-            top: 30,
-            left: 10,
-            child: Icon(Icons.arrow_back_ios_new)),
-          Padding(
-          padding: const EdgeInsets.all(20.0),
+        Positioned(top: 30, left: 10, child: Icon(Icons.arrow_back_ios_new)),
+        Positioned(
+          top: 100,
+          right: 200,
+          child: Image.asset(
+            'assets/Group.png',
+            height: 55,
+            width: 47,
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.all(20.0),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-              
-                Image.asset(
-                  'assets/Group.png',
-                  height: 55,
-                  width: 47,
-                ),
-                const SizedBox(height: 100),
-        
+                SizedBox(height: 100),
+
                 // Title
-                const Text(
+                Text(
                   'Forget Password ',
                   style: TextStyle(
                     fontSize: 26,
@@ -49,8 +48,8 @@ class ForgetPasswordScreenBody extends StatelessWidget {
                   ),
                   // textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 5),
-                const Text(
+                SizedBox(height: 5),
+                Text(
                   'Enter your email for verification process we will send 5 digits code to your email',
                   style: TextStyle(
                     fontSize: 13,
@@ -58,9 +57,9 @@ class ForgetPasswordScreenBody extends StatelessWidget {
                   ),
                   // textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 50),
+                SizedBox(height: 50),
                 // Email Input
-                const TextField(
+                TextField(
                   decoration: InputDecoration(
                     labelText: 'Email',
                     hintText: 'Enter your email',
@@ -68,25 +67,25 @@ class ForgetPasswordScreenBody extends StatelessWidget {
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
-                const SizedBox(height: 20),
-        
+                SizedBox(height: 20),
+
                 // Password Input
-        
-                const SizedBox(height: 10),
-        
+
+                SizedBox(height: 10),
+
                 // Forgot Password
-        
-                const SizedBox(height: 40),
-        
+
+                SizedBox(height: 40),
+
                 // Login Button
-                const CustomButton(text: 'Countinue'),
-        
+                CustomButton(text: 'Countinue'),
+
                 // Signup Link
               ],
             ),
           ),
         ),
-     ] ),
+      ]),
     );
   }
 }

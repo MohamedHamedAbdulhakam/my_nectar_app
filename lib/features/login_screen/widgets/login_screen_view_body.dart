@@ -24,6 +24,15 @@ class LoginScreenViewBody extends StatelessWidget {
             ),
           ),
         ),
+           Positioned(
+            top: 100,
+            right: 200,
+             child: Image.asset(
+                      'assets/Group.png',
+                      height: 55,
+                      width: 47,
+                    ),
+           ),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Center(
@@ -31,11 +40,7 @@ class LoginScreenViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Image.asset(
-                    'assets/Group.png',
-                    height: 55,
-                    width: 47,
-                  ),
+               
                   const SizedBox(height: 100),
 
                   // Title
