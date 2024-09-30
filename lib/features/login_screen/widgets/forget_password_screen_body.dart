@@ -13,13 +13,12 @@ class ForgetPasswordScreenBody extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Center(
           child: Column(
-            
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Align(
-                alignment: Alignment.topLeft,
-                child: Icon(Icons.arrow_back_ios_new)),
+              const Align(
+                  alignment: Alignment.topLeft,
+                  child: Icon(Icons.arrow_back_ios_new)),
               Image.asset(
                 'assets/Group.png',
                 height: 55,
@@ -48,7 +47,6 @@ class ForgetPasswordScreenBody extends StatelessWidget {
               const SizedBox(height: 50),
               // Email Input
               const TextField(
-                
                 decoration: InputDecoration(
                   labelText: 'Email',
                   hintText: 'Enter your email',
@@ -59,19 +57,17 @@ class ForgetPasswordScreenBody extends StatelessWidget {
               const SizedBox(height: 20),
 
               // Password Input
-              
+
               const SizedBox(height: 10),
 
               // Forgot Password
-           
+
               const SizedBox(height: 40),
 
               // Login Button
               const CustomButton(text: 'Countinue'),
-             
 
               // Signup Link
-              
             ],
           ),
         ),
