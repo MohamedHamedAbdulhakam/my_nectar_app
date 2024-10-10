@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:go_router/go_router.dart';
-import 'package:my_nectar_app/core/utils/app_router.dart';
-import 'package:my_nectar_app/features/login_screen/presentaion/views/widgets/custom_button.dart';
+import 'package:my_nectar_app/constants.dart';
 
-class ForgetPasswordScreenBody extends StatelessWidget {
+import 'package:my_nectar_app/features/login_screen/presentaion/views/widgets/custom_button.dart';
+import 'package:pin_code_text_field/pin_code_text_field.dart';
+
+class ForgetPasswordScreenBody extends StatefulWidget {
   const ForgetPasswordScreenBody({super.key});
 
+  @override
+  State<ForgetPasswordScreenBody> createState() =>
+      _ForgetPasswordScreenBodyState();
+}
+
+class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -117,20 +125,102 @@ class ForgetPasswordScreenBody extends StatelessWidget {
                                       color: Colors.black.withOpacity(.5)),
                                 ),
                                 SizedBox(
-                                  height: 20,
+                                  height: 50,
                                 ),
-                                TextFormField(
-                                  maxLength: 5,
-                                  keyboardType: TextInputType.number,
-                                  textAlign: TextAlign.center,
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                  ),
+                                PinCodeTextField(
+                                  controller: controller,
+                                  maxLength: 6,
+                                  pinBoxWidth: 50,
+                                  pinBoxHeight: 50,
+                                  pinBoxColor: KeyPrimaryColor,
+                                  highlightColor: KeyPrimaryColor,
+                                  defaultBorderColor: KeyPrimaryColor,
+                                  hasTextBorderColor: KeyPrimaryColor,
+                                  hideCharacter: true,
+                                  pinBoxRadius: 10,
                                 ),
-                                const SizedBox(height: 20),
-                                const CustomButton(text: 'Send Code '),
+                                const SizedBox(height: 50),
+                                CustomButton(
+                                  text: 'Send Code ',
+                                  onPressed: () {
+                                    showModalBottomSheet(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return Padding(
+                                          padding: const EdgeInsets.all(20),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
+                                            children: [
+                                              const Text(
+                                                'Reset Passowrd',
+                                                style: TextStyle(
+                                                    fontSize: 26,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                              const SizedBox(
+                                                height: 20,
+                                              ),
+                                              const Text(
+                                                'Enter new password to your email to reset your passowrd',
+                                                style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              ),
+                                              SizedBox(
+                                                height: 20,
+                                              ),
+                                              TextField(
+                                                decoration: InputDecoration(
+                                                  labelText: 'Email',
+                                                  hintText: 'Enter your email',
+                                                  // border: OutlineInputBorder(),
+                                                ),
+                                                keyboardType:
+                                                    TextInputType.emailAddress,
+                                              ),
+                                              const SizedBox(height: 20),
+
+                                              // Password Input
+                                              const TextField(
+                                                obscureText: true,
+                                                decoration: InputDecoration(
+                                                  labelText: 'Password',
+                                                  hintText:
+                                                      'Enter your password',
+                                                  // border: OutlineInputBorder(),
+                                                  suffixIcon: Icon(
+                                                      Icons.visibility_off),
+                                                ),
+                                              ),
+                                              const SizedBox(height: 20),
+                                              TextField(
+                                                obscureText: true,
+                                                decoration: InputDecoration(
+                                                  labelText: 'Confirm Password',
+                                                  hintText:
+                                                      'Enter your password',
+                                                  // border: OutlineInputBorder(),
+                                                  suffixIcon: Icon(
+                                                      Icons.visibility_off),
+                                                ),
+                                              ),
+                                              const SizedBox(height: 50),
+                                              CustomButton(
+                                                text: 'Reset Passowrd ',
+                                                onPressed: () {},
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
+                                ),
                               ],
                             ),
                           );
