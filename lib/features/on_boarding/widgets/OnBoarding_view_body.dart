@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/app_router.dart';
+import 'package:my_nectar_app/core/utils/functions/styles.dart';
+import 'package:my_nectar_app/features/login_screen/presentaion/views/widgets/custom_button.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
@@ -41,72 +43,22 @@ class OnBoardingViewBody extends StatelessWidget {
               ),
             ),
             // Welcome Text
-            const Text(
-              "Welcome",
-              style: TextStyle(
-                color: Colors.white,
-                decoration: TextDecoration.none, // This removes the underline
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const Text(
-              "to our store",
-              style: TextStyle(
-                color: Colors.white,
-                decoration: TextDecoration.none, // This removes the underline
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
-            ),
-
+            const Text("Welcome",
+                style: Styles.textStyle48, textAlign: TextAlign.center),
+            const Text('to our store',
+                style: Styles.textStyle48, textAlign: TextAlign.center),
             const SizedBox(height: 10),
-
-            // Subheading Text
-            const Text(
-              "Get your groceries in as fast as one hour",
-              style: TextStyle(
-                color: Colors.white70,
-                fontSize: 16,
-                decoration: TextDecoration.none, // This removes the underline
-              ),
-              textAlign: TextAlign.center,
-            ),
-
-            // Spacer for alignment
-
+            const Text("Get your groceries in as fast as one hour",
+                style: Styles.textStyle16, textAlign: TextAlign.center),
             const SizedBox(height: 40),
-            // Get Started Button
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40.0),
-              child: ElevatedButton(
-                onPressed: () {
-                   GoRouter.of(context).push(AppRouter.keyloginview);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: KeyPrimaryColor,
-                  iconColor: KeyPrimaryColor,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                ),
-                child: const Center(
-                  child: Text(
-                    'Get Started',
-                    style: TextStyle(
-                      color: Colors.white,
-                      decoration:
-                          TextDecoration.none, // This removes the underline
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                child: CustomButton(
+                  text: 'Get started',
+                  onPressed: () {
+                    GoRouter.of(context).push(AppRouter.keyloginview);
+                  },
+                )),
 
             // Bottom spacing
             const Spacer(flex: 1),

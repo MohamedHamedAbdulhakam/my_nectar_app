@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/core/utils/app_router.dart';
+import 'package:my_nectar_app/core/utils/functions/styles.dart';
 import 'package:my_nectar_app/features/login_screen/presentaion/views/widgets/custom_button.dart';
 
 class LoginScreenViewBody extends StatelessWidget {
@@ -11,27 +12,26 @@ class LoginScreenViewBody extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
-        
         children: [
-           Container(
-          // width:100,
-          // height: 400,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/Mask Group.jpg'),
-              fit: BoxFit.cover,
+          Container(
+            // width:100,
+            // height: 400,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/Mask Group.jpg'),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-        ),
-           Positioned(
+          Positioned(
             top: 100,
             right: 200,
-             child: Image.asset(
-                      'assets/Group.png',
-                      height: 55,
-                      width: 47,
-                    ),
-           ),
+            child: Image.asset(
+              'assets/Group.png',
+              height: 55,
+              width: 47,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Center(
@@ -39,27 +39,15 @@ class LoginScreenViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-               
                   const SizedBox(height: 100),
 
                   // Title
-                  const Text(
-                    'Loging ',
-                    style: TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    // textAlign: TextAlign.center,
-                  ),
+                  const Text('Loging ', style: Styles.textStyle26
+                      // textAlign: TextAlign.center,
+                      ),
                   const SizedBox(height: 5),
-                  const Text(
-                    'Enter your email and passowrd',
-                    style: TextStyle(
-                      fontSize: 13,
-                      // fontWeight: FontWeight.bold,
-                    ),
-                    // textAlign: TextAlign.center,
-                  ),
+                  const Text('Enter your email and passowrd',
+                      style: Styles.textStyle16),
                   const SizedBox(height: 30),
                   // Email Input
                   const TextField(

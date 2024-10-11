@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:my_nectar_app/constants.dart';
+import 'package:my_nectar_app/core/utils/functions/styles.dart';
 
 import 'package:my_nectar_app/features/login_screen/presentaion/views/widgets/custom_button.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
@@ -30,7 +31,8 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
             ),
           ),
         ),
-        Positioned(top: 30, left: 10, child: Icon(Icons.arrow_back_ios_new)),
+        const Positioned(
+            top: 30, left: 10, child: Icon(Icons.arrow_back_ios_new)),
         Positioned(
           top: 100,
           right: 200,
@@ -50,23 +52,11 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                 const SizedBox(height: 100),
 
                 // Title
-                const Text(
-                  'Forget Password ',
-                  style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  // textAlign: TextAlign.center,
-                ),
+                const Text('Forget Password ', style: Styles.textStyle26),
                 const SizedBox(height: 5),
                 const Text(
-                  'Enter your email for verification process we will send 5 digits code to your email',
-                  style: TextStyle(
-                    fontSize: 13,
-                    // fontWeight: FontWeight.bold,
-                  ),
-                  // textAlign: TextAlign.center,
-                ),
+                    'Enter your email for verification process we will send 5 digits code to your email',
+                    style: Styles.textStyle16),
                 const SizedBox(height: 50),
                 // Email Input
                 const TextField(
@@ -77,17 +67,8 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 70),
 
-                // Password Input
-
-                const SizedBox(height: 10),
-
-                // Forgot Password
-
-                const SizedBox(height: 40),
-
-                // Login Button
                 CustomButton(
                     onPressed: () {
                       showModalBottomSheet(
@@ -99,22 +80,15 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                const Text(
-                                  'Reset Passowrd',
-                                  style: TextStyle(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.w600),
-                                ),
+                                const Text('Reset Passowrd',
+                                    style: Styles.textStyle26),
                                 const SizedBox(
                                   height: 20,
                                 ),
                                 const Text(
-                                  'Enter the code that was sent to yout email address',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w400),
-                                ),
-                                SizedBox(
+                                    'Enter the code that was sent to yout email address',
+                                    style: Styles.textStyle16),
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Text(
@@ -124,7 +98,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                                       fontWeight: FontWeight.w600,
                                       color: Colors.black.withOpacity(.5)),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 50,
                                 ),
                                 PinCodeTextField(
@@ -156,25 +130,18 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                                             children: [
                                               const Text(
                                                 'Reset Passowrd',
-                                                style: TextStyle(
-                                                    fontSize: 26,
-                                                    fontWeight:
-                                                        FontWeight.w600),
+                                                style: Styles.textStyle26
                                               ),
                                               const SizedBox(
                                                 height: 20,
                                               ),
                                               const Text(
-                                                'Enter new password to your email to reset your passowrd',
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight:
-                                                        FontWeight.w400),
-                                              ),
-                                              SizedBox(
+                                                  'Enter new password to your email to reset your passowrd',
+                                                  style: Styles.textStyle16),
+                                              const SizedBox(
                                                 height: 20,
                                               ),
-                                              TextField(
+                                              const TextField(
                                                 decoration: InputDecoration(
                                                   labelText: 'Email',
                                                   hintText: 'Enter your email',
@@ -198,7 +165,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                                                 ),
                                               ),
                                               const SizedBox(height: 20),
-                                              TextField(
+                                              const TextField(
                                                 obscureText: true,
                                                 decoration: InputDecoration(
                                                   labelText: 'Confirm Password',
