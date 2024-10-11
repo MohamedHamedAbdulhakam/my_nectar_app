@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/core/utils/app_router.dart';
 import 'package:my_nectar_app/core/utils/functions/styles.dart';
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
+import 'package:my_nectar_app/core/widgets/email_text_field.dart';
+import 'package:my_nectar_app/core/widgets/password_text_field.dart';
 
 class LoginScreenViewBody extends StatelessWidget {
   const LoginScreenViewBody({super.key});
@@ -50,29 +52,10 @@ class LoginScreenViewBody extends StatelessWidget {
                       style: Styles.textStyle16),
                   const SizedBox(height: 30),
                   // Email Input
-                  const TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      hintText: 'Enter your email',
-                      // border: OutlineInputBorder(),
-                    ),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
+                  const EmailTextField(),
                   const SizedBox(height: 20),
-
-                  // Password Input
-                  const TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      hintText: 'Enter your password',
-                      // border: OutlineInputBorder(),
-                      suffixIcon: Icon(Icons.visibility_off),
-                    ),
-                  ),
+                  const PasswordTextField(labeltext: 'Password'),
                   const SizedBox(height: 10),
-
-                  // Forgot Password
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
@@ -88,12 +71,8 @@ class LoginScreenViewBody extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-
-                  // Login Button
                   const CustomButton(text: 'Login In'),
                   const SizedBox(height: 20),
-
-                  // Signup Link
                   Center(
                     child: TextButton(
                       onPressed: () {

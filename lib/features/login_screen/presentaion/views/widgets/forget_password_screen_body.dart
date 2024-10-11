@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/functions/styles.dart';
-
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
+import 'package:my_nectar_app/core/widgets/email_text_field.dart';
+import 'package:my_nectar_app/core/widgets/password_text_field.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
-
 class ForgetPasswordScreenBody extends StatefulWidget {
   const ForgetPasswordScreenBody({super.key});
 
@@ -22,8 +21,6 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
       backgroundColor: Colors.white,
       body: Stack(children: [
         Container(
-          // width:100,
-          // height: 400,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/Mask Group.jpg'),
@@ -50,8 +47,6 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 const SizedBox(height: 100),
-
-                // Title
                 const Text('Forget Password ', style: Styles.textStyle26),
                 const SizedBox(height: 5),
                 const Text(
@@ -59,14 +54,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                     style: Styles.textStyle16),
                 const SizedBox(height: 50),
                 // Email Input
-                const TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    hintText: 'Enter your email',
-                    // border: OutlineInputBorder(),
-                  ),
-                  keyboardType: TextInputType.emailAddress,
-                ),
+                const EmailTextField(),
                 const SizedBox(height: 70),
 
                 CustomButton(
@@ -141,41 +129,11 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                                               const SizedBox(
                                                 height: 20,
                                               ),
-                                              const TextField(
-                                                decoration: InputDecoration(
-                                                  labelText: 'Email',
-                                                  hintText: 'Enter your email',
-                                                  // border: OutlineInputBorder(),
-                                                ),
-                                                keyboardType:
-                                                    TextInputType.emailAddress,
-                                              ),
+                                              const EmailTextField(),
                                               const SizedBox(height: 20),
-
-                                              // Password Input
-                                              const TextField(
-                                                obscureText: true,
-                                                decoration: InputDecoration(
-                                                  labelText: 'Password',
-                                                  hintText:
-                                                      'Enter your password',
-                                                  // border: OutlineInputBorder(),
-                                                  suffixIcon: Icon(
-                                                      Icons.visibility_off),
-                                                ),
-                                              ),
+                                              const PasswordTextField(labeltext: 'Passowrd',),
                                               const SizedBox(height: 20),
-                                              const TextField(
-                                                obscureText: true,
-                                                decoration: InputDecoration(
-                                                  labelText: 'Confirm Password',
-                                                  hintText:
-                                                      'Enter your password',
-                                                  // border: OutlineInputBorder(),
-                                                  suffixIcon: Icon(
-                                                      Icons.visibility_off),
-                                                ),
-                                              ),
+                                              const PasswordTextField(labeltext: 'Confirm Passowrd'),
                                               const SizedBox(height: 50),
                                               CustomButton(
                                                 text: 'Reset Passowrd ',
@@ -206,3 +164,5 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
     );
   }
 }
+
+
