@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/core/utils/app_router.dart';
 import 'package:my_nectar_app/core/utils/functions/styles.dart';
-import 'package:my_nectar_app/features/login_screen/presentaion/views/widgets/custom_button.dart';
+import 'package:my_nectar_app/core/widgets/custom_button.dart';
 
 class LoginScreenViewBody extends StatelessWidget {
   const LoginScreenViewBody({super.key});

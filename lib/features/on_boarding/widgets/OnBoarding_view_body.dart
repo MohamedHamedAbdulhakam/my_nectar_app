@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/app_router.dart';
 import 'package:my_nectar_app/core/utils/functions/styles.dart';
-import 'package:my_nectar_app/features/login_screen/presentaion/views/widgets/custom_button.dart';
+import 'package:my_nectar_app/core/widgets/custom_button.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});

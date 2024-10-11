@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/functions/styles.dart';
 
-import 'package:my_nectar_app/features/login_screen/presentaion/views/widgets/custom_button.dart';
+import 'package:my_nectar_app/core/widgets/custom_button.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 class ForgetPasswordScreenBody extends StatefulWidget {
