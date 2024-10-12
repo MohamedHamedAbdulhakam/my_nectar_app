@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/constants.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/widgets/dont_have_account.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/widgets/forget_password_section.dart';
 
 import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/assets.dart';
@@ -42,20 +44,8 @@ class LoginScreenViewBody extends StatelessWidget {
             const SizedBox(height: 20),
             const PasswordTextField(labeltext: 'Password'),
             const SizedBox(height: 10),
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: () {
-                  // Handle forgot password action
-                },
-                child: GestureDetector(
-                    onTap: () {
-                      GoRouter.of(context).push(AppRouter.keyforgetpassword);
-                    },
-                    child: const Text('Forgot Password?')),
-              ),
-            ),
-            const SizedBox(height: 20),
+            const ForgetPasswordSection(),
+            const SizedBox(height: 30),
             CustomButton(text: 'Login In', onPressed: () {}),
             const SizedBox(height: 20),
             Center(
@@ -63,21 +53,7 @@ class LoginScreenViewBody extends StatelessWidget {
                 onPressed: () {
                   // Handle signup action
                 },
-                child: const Text.rich(
-                  TextSpan(
-                    text: "Don’t have an account? ",
-                    style: TextStyle(color: Colors.black),
-                    children: [
-                      TextSpan(
-                        text: "Sign Up",
-                        style: TextStyle(
-                          color: Colors.green,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                child: const DontHaveAccont(),
               ),
             ),
           ],
@@ -86,3 +62,6 @@ class LoginScreenViewBody extends StatelessWidget {
     );
   }
 }
+
+
+

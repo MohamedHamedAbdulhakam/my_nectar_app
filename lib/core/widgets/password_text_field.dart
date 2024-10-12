@@ -20,7 +20,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('PassWord'),
+        const Text('Password'),
         TextField(
           obscureText: show,
           decoration: InputDecoration(
