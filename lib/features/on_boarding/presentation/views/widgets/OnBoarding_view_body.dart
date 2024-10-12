@@ -26,7 +26,7 @@ class OnBoardingViewBody extends StatelessWidget {
           const Spacer(),
        
           Image.asset(Assets.whitcolorcarot),
-          const Text("Welcomen \n to our storl",
+          const Text("  Welcome \n to our store",
               style: Styles.textStyle48, ),
          
           const SizedBox(height: 10),

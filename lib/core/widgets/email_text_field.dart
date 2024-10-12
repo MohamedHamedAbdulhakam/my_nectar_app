@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_nectar_app/constants.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField({
@@ -8,11 +9,16 @@ class EmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text('Email'),
         TextField(
           decoration: const InputDecoration(
-            hintText: 'Enter your email',
+           focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: keyPrimaryColor)
+
+            )
+           
             // border: OutlineInputBorder(),
           ),
           keyboardType: inputtype,
