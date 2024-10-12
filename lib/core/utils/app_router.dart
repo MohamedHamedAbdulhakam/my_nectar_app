@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:my_nectar_app/features/login_screen/presentaion/views/forget_passowrd_view.dart';
-import 'package:my_nectar_app/features/login_screen/presentaion/views/login_screen_view.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/forget_passowrd_view.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/login_screen_view.dart';
 import 'package:my_nectar_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:my_nectar_app/features/splash/presentation/views/splash_view.dart';
 

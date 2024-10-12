@@ -15,7 +15,7 @@ class CustomButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
-        backgroundColor: KeyPrimaryColor,
+        backgroundColor: keyPrimaryColor,
         padding: const EdgeInsets.symmetric(vertical: 15),
         minimumSize: const Size(double.infinity, 65),
       ),

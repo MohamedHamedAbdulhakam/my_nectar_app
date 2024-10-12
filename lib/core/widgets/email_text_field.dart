@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField({
-    super.key,
+    super.key, required this.inputtype,
   });
-
+  final TextInputType inputtype;
   @override
   Widget build(BuildContext context) {
-    return const TextField(
-      decoration: InputDecoration(
-        labelText: 'Email',
-        hintText: 'Enter your email',
-        // border: OutlineInputBorder(),
-      ),
-      keyboardType:
-          TextInputType.emailAddress,
+    return  Column(
+      children: [
+        const Text('Email'),
+        TextField(
+          decoration: const InputDecoration(
+            hintText: 'Enter your email',
+            // border: OutlineInputBorder(),
+          ),
+          keyboardType: inputtype,
+        ),
+      ],
     );
   }
 }

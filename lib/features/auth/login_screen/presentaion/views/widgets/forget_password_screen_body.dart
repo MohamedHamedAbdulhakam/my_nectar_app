@@ -54,7 +54,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                     style: Styles.textStyle16),
                 const SizedBox(height: 50),
                 // Email Input
-                const EmailTextField(inputtype:TextInputType.datetime ,),
+                const EmailTextField(inputtype: TextInputType.emailAddress,),
                 const SizedBox(height: 70),
 
                 CustomButton(
@@ -96,7 +96,8 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
                                   pinBoxHeight: 50,
                                   pinBoxColor: keyPrimaryColor,
                                   highlightColor: keyPrimaryColor,
-                                  defaultBorderColor:keyPrimaryColor,
+                                  defaultBorderColor: keyPrimaryColor,
+                
                                   hasTextBorderColor: keyPrimaryColor,
                                   hideCharacter: true,
                                   pinBoxRadius: 10,
