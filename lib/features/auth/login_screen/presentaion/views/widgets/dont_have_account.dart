@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DontHaveAccont extends StatelessWidget {
-  const DontHaveAccont({
+class DontHaveAccontSection extends StatelessWidget {
+  const DontHaveAccontSection({
     super.key,
   });
 

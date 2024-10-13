@@ -53,7 +53,7 @@ class LoginScreenViewBody extends StatelessWidget {
                 onPressed: () {
                   // Handle signup action
                 },
-                child: const DontHaveAccont(),
+                child: const DontHaveAccontSection(),
               ),
             ),
           ],
