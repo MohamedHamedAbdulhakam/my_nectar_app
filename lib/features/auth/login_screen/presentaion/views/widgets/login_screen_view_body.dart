@@ -39,7 +39,7 @@ class LoginScreenViewBody extends StatelessWidget {
               inputtype: TextInputType.emailAddress,
             ),
             const SizedBox(height: 20),
-            const PasswordTextField(labeltext: 'Password'),
+            const PasswordTextField(text: 'Password'),
             const SizedBox(height: 10),
             const ForgetPasswordSection(),
             const SizedBox(height: 30),

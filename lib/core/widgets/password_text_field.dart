@@ -4,9 +4,9 @@ import 'package:my_nectar_app/constants.dart';
 class PasswordTextField extends StatefulWidget {
   const PasswordTextField({
     super.key,
-    required this.labeltext,
+    required this.text,
   });
-  final String labeltext;
+  final String text;
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -20,7 +20,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Password'),
+         Text(widget.text),//in statful widget we use widget.
         TextField(
           obscureText: show,
           decoration: InputDecoration(
@@ -36,7 +36,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
                     
                   });
                 },
-                icon: show? const Icon(Icons.visibility):Icon(Icons.visibility_off)),
+                icon: show? const Icon(Icons.visibility):const Icon(Icons.visibility_off)),
           ),
         ),
       ],

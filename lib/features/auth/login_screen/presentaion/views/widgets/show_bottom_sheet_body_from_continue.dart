@@ -59,7 +59,7 @@ class ShowBottomSheetBodyFromContinue extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
               showModalBottomSheet(
-                
+                isScrollControlled: true,
                 context: context,
                 builder: (BuildContext context) {
                   return const ShowBottomSheetBodyFromSendTo();
