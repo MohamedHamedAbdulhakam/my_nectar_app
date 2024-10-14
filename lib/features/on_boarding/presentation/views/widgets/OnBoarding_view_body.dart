@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:my_nectar_app/constants.dart';
-import 'package:my_nectar_app/core/utils/app_router.dart';
-import 'package:my_nectar_app/core/utils/assets.dart';
-import 'package:my_nectar_app/core/utils/styles.dart';
-import 'package:my_nectar_app/core/widgets/custom_button.dart';
+
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_button.dart';
 
 class OnBoardingViewBody extends StatelessWidget {
   const OnBoardingViewBody({super.key});
