@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/constants.dart';
+import 'package:my_nectar_app/core/utils/app_router.dart';
 import 'package:my_nectar_app/core/utils/styles.dart';
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
 import 'package:my_nectar_app/core/widgets/email_text_field.dart';
@@ -47,7 +49,7 @@ class ShowBottomSheetBodyFromSendTo extends StatelessWidget {
             CustomButton(
               text: 'Reset Passowrd ',
               onPressed: () {
-                
+                GoRouter.of(context).push(AppRouter.keyresetpasswordsuccess);
               },
             ),
           ],
