@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/app_router.dart';
+import 'package:my_nectar_app/core/widgets/logo_section.dart';
 import 'package:my_nectar_app/core/widgets/text_section.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/dont_have_account.dart';
+import 'package:my_nectar_app/core/widgets/status_of_having_account_section.dart';
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/forget_password_section.dart';
 import '../../../../../../core/utils/assets.dart';
 import '../../../../../../core/utils/styles.dart';
@@ -29,12 +30,9 @@ class LoginScreenViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(height: 80),
-              Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(Assets.carotImage)),
+              const LogoSection(),
               const SizedBox(height: 80),
-              TextSection(
+             const  TextSection(
                 textOne: 'Loging',
                 textTwo: 'Enter Your Email and Password',
               ),
@@ -55,7 +53,7 @@ class LoginScreenViewBody extends StatelessWidget {
                   onPressed: () {
                     GoRouter.of(context).push(AppRouter.kSignUpView);
                   },
-                  child: const DontHaveAccontSection(
+                  child: const StatusOfHavingAccountSection(
                     sectionOneText: 'Dont have an account?',
                     sectionTwoText: 'Sign Up ',
                   ),
@@ -68,3 +66,4 @@ class LoginScreenViewBody extends StatelessWidget {
     );
   }
 }
+

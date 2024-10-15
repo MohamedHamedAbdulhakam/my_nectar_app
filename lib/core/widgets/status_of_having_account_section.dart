@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DontHaveAccontSection extends StatelessWidget {
-  const DontHaveAccontSection({
+class StatusOfHavingAccountSection extends StatelessWidget {
+  const StatusOfHavingAccountSection({
     super.key, required this.sectionOneText, required this.sectionTwoText,
   });
   final String sectionOneText;

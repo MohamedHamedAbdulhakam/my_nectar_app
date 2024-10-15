@@ -12,6 +12,7 @@ class TextSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
          Text(textOne, style: Styles.textStyle26),
         const SizedBox(height: 5),
