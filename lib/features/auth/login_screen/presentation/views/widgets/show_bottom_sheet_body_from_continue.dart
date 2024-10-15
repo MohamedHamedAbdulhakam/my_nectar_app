@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/styles.dart';
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
+import 'package:my_nectar_app/core/widgets/text_section.dart';
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/show_bottom_sheet_body_from_send_to.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
@@ -22,12 +22,7 @@ class ShowBottomSheetBodyFromContinue extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Text('Reset Passowrd', style: Styles.textStyle26),
-          const SizedBox(
-            height: 20,
-          ),
-          Text('Enter the code that was sent to yout email address',
-              style: Styles.textStyle16.copyWith(color: kGreyColor)),
+          TextSection(textOne: 'Reset Password', textTwo: 'Enter the code that sent to your email /n address'),
           const SizedBox(
             height: 20,
           ),

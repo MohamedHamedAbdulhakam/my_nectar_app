@@ -4,6 +4,8 @@ import 'package:my_nectar_app/core/utils/assets.dart';
 import 'package:my_nectar_app/core/utils/styles.dart';
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
 import 'package:my_nectar_app/core/widgets/email_text_field.dart';
+import 'package:my_nectar_app/core/widgets/logo_section.dart';
+import 'package:my_nectar_app/core/widgets/text_section.dart';
 
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/show_bottom_sheet_body_from_continue.dart';
 
@@ -32,22 +34,10 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
-                height: 80,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(Assets.carotImage)),
+              const LogoSection(),
               const SizedBox(height: 80),
 
-              const Text('Forget Password ', style: Styles.textStyle26),
-              const SizedBox(height: 5),
-              Text(
-                  'Enter your email for verification process we will send 5 digits code to your email',
-                  style: Styles.textStyle16.copyWith(color: kGreyColor)),
+              const TextSection(textOne: 'Forget Password', textTwo: 'Enter your email for verification process we will send 5 digit code to your email'),
               const SizedBox(height: 30),
               // Email Input
               const EmailTextField(
