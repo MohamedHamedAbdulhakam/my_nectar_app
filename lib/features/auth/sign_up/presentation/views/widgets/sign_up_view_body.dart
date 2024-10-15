@@ -54,14 +54,9 @@ class SignUpViewBody extends StatelessWidget {
               CustomButton(text: 'Sign Up', onPressed: () {}),
               const SizedBox(height: 20),
               Center(
-                child: TextButton(
-                  onPressed: () {
-                    // Handle signup action
-                  },
-                  child: const StatusOfHavingAccountSection(
-                    sectionOneText: 'Already have an account ',
-                    sectionTwoText: 'Sign Up ',
-                  ),
+                child: const StatusOfHavingAccountSection(
+                  sectionOneText: 'Already have an account ',
+                  sectionTwoText: 'Sign in ',
                 ),
               ),
             ],

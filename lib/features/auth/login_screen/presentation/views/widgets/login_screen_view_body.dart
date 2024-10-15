@@ -49,14 +49,9 @@ class LoginScreenViewBody extends StatelessWidget {
               CustomButton(text: 'Login In', onPressed: () {}),
               const SizedBox(height: 20),
               Center(
-                child: TextButton(
-                  onPressed: () {
-                    GoRouter.of(context).push(AppRouter.kSignUpView);
-                  },
-                  child: const StatusOfHavingAccountSection(
-                    sectionOneText: 'Dont have an account?',
-                    sectionTwoText: 'Sign Up ',
-                  ),
+                child: const StatusOfHavingAccountSection(
+                  sectionOneText: 'Dont have an account?',
+                  sectionTwoText: 'Sign Up ',
                 ),
               ),
             ],
