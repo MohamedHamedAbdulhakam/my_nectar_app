@@ -16,7 +16,7 @@ class LoginScreenViewBody extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(Assets.whitebackgroundimage),
+          image: AssetImage(Assets.whiteBackgroundImage),
           fit: BoxFit.fill,
         ),
       ),
@@ -28,7 +28,7 @@ class LoginScreenViewBody extends StatelessWidget {
            SizedBox(height: MediaQuery.of(context).size.height/13,),
             Align(
               alignment: Alignment.center,
-              child: Image.asset(Assets.carotimage)),
+              child: Image.asset(Assets.carotImage)),
              const SizedBox(height: 80),
             const Text('Loging ', style: Styles.textStyle26),
             const SizedBox(height: 5),

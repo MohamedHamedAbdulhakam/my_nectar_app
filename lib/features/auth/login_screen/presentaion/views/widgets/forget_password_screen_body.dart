@@ -24,7 +24,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(Assets.whitebackgroundimage),
+          image: AssetImage(Assets.whiteBackgroundImage),
           fit: BoxFit.cover,
         ),
       ),
@@ -42,7 +42,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
               ),
               Align(
                   alignment: Alignment.center,
-                  child: Image.asset(Assets.carotimage)),
+                  child: Image.asset(Assets.carotImage)),
               const SizedBox(height: 80),
 
               const Text('Forget Password ', style: Styles.textStyle26),

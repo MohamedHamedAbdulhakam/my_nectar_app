@@ -15,7 +15,7 @@ class OnBoardingViewBody extends StatelessWidget {
       
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(Assets.backgroundimage),
+          image: AssetImage(Assets.backgroundImage),
           fit: BoxFit.fill,
         ),
       ),
@@ -25,7 +25,7 @@ class OnBoardingViewBody extends StatelessWidget {
           // Top spacing
           const Spacer(),
        
-          Image.asset(Assets.whitcolorcarot),
+          Image.asset(Assets.whiteColorCarot),
           const Text("  Welcome \n to our store",
               style: Styles.textStyle48, ),
          
