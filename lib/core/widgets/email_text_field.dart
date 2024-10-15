@@ -15,6 +15,7 @@ class EmailTextField extends StatelessWidget {
       children: [
        Text(text),
         TextField(
+        
           decoration: const InputDecoration(
               focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: keyPrimaryColor))

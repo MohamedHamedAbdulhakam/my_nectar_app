@@ -50,7 +50,7 @@ class ShowBottomSheetBodyFromContinue extends StatelessWidget {
             highlightColor: keyPrimaryColor,
             defaultBorderColor: keyPrimaryColor,
             hasTextBorderColor: keyPrimaryColor,
-            hideCharacter: true,
+          
             pinBoxRadius: 10,
           ),
           const SizedBox(height: 50),

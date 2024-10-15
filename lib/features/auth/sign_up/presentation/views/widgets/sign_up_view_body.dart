@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/dont_have_account.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/forget_password_section.dart';
 import '../../../../../../core/utils/assets.dart';
 import '../../../../../../core/utils/styles.dart';
 import '../../../../../../core/widgets/custom_button.dart';
@@ -10,6 +9,8 @@ import '../../../../../../core/widgets/password_text_field.dart';
 
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});
+
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,11 @@ class SignUpViewBody extends StatelessWidget {
               const SizedBox(height: 20),
               const PasswordTextField(text: 'Password'),
               const SizedBox(height: 10),
-               Text('By countiueing you agree to our Terms of service and privacy policy ',style: Styles.textStyle16.copyWith(color: kGreyColor,fontSize: 14),),
+              Text(
+                'By countiueing you agree to our Terms of service and privacy policy ',
+                style: Styles.textStyle16
+                    .copyWith(color: kGreyColor, fontSize: 14),
+              ),
               const SizedBox(height: 30),
               CustomButton(text: 'Sign Up', onPressed: () {}),
               const SizedBox(height: 20),

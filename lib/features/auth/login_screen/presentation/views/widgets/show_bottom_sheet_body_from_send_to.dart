@@ -14,40 +14,38 @@ class ShowBottomSheetBodyFromSendTo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Reset Passowrd', style: Styles.textStyle26),
-            const SizedBox(
-              height: 20,
-            ),
-            Text('Enter new password to your email to reset your passowrd',
-                style: Styles.textStyle16.copyWith(color: kGreyColor)),
-            const SizedBox(
-              height: 20,
-            ),
-            const EmailTextField(
-              text: 'Email',
-              inputtype: TextInputType.emailAddress,
-            ),
-            const SizedBox(height: 20),
-            const PasswordTextField(
-              text: 'Passowrd',
-            ),
-            const SizedBox(height: 20),
-            const PasswordTextField(text: 'Confirm Passowrd'),
-            const SizedBox(height: 50),
-            CustomButton(
-              text: 'Reset Passowrd ',
-              onPressed: () {
-                GoRouter.of(context).push(AppRouter.kResetPasswordSuccess);
-              },
-            ),
-          ],
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: Column(mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('Reset Passowrd', style: Styles.textStyle26),
+          const SizedBox(
+            height: 20,
+          ),
+          Text('Enter new password to your email to reset your passowrd',
+              style: Styles.textStyle16.copyWith(color: kGreyColor)),
+          const SizedBox(
+            height: 20,
+          ),
+          const EmailTextField(
+            text: 'Email',
+            inputtype: TextInputType.emailAddress,
+          ),
+          const SizedBox(height: 20),
+          const PasswordTextField(
+            text: 'Passowrd',
+          ),
+          const SizedBox(height: 20),
+          const PasswordTextField(text: 'Confirm Passowrd'),
+          const SizedBox(height: 50),
+          CustomButton(
+            text: 'Reset Passowrd ',
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kResetPasswordSuccess);
+            },
+          ),
+        ],
       ),
     );
   }

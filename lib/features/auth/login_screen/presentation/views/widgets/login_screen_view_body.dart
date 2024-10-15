@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/app_router.dart';
+import 'package:my_nectar_app/core/widgets/text_section.dart';
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/dont_have_account.dart';
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/forget_password_section.dart';
 import '../../../../../../core/utils/assets.dart';
@@ -15,28 +16,28 @@ class LoginScreenViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(Assets.whiteBackgroundImage),
-          fit: BoxFit.fill,
+    return SingleChildScrollView(
+      child: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(Assets.whiteBackgroundImage),
+            fit: BoxFit.fill,
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-             SizedBox(height: MediaQuery.of(context).size.height/13,),
+              SizedBox(height: 80),
               Align(
-                alignment: Alignment.center,
-                child: Image.asset(Assets.carotImage)),
-               const SizedBox(height: 80),
-              const Text('Loging ', style: Styles.textStyle26),
-              const SizedBox(height: 5),
-            Text('Enter your email and passowrd',
-                  style: Styles.textStyle16.copyWith(color: kGreyColor)),
+                  alignment: Alignment.center,
+                  child: Image.asset(Assets.carotImage)),
+              const SizedBox(height: 80),
+              TextSection(
+                textOne: 'Loging',
+                textTwo: 'Enter Your Email and Password',
+              ),
               const SizedBox(height: 30),
               const EmailTextField(
                 text: 'Email',
@@ -67,6 +68,3 @@ class LoginScreenViewBody extends StatelessWidget {
     );
   }
 }
-
-
-
