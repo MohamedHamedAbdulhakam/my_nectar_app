@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/styles.dart';
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/widgets/show_bottom_sheet_body_from_send_to.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/show_bottom_sheet_body_from_send_to.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 class ShowBottomSheetBodyFromContinue extends StatelessWidget {

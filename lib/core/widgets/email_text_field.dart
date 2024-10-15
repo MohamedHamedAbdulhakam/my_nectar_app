@@ -3,24 +3,24 @@ import 'package:my_nectar_app/constants.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField({
-    super.key, required this.inputtype,
+    super.key,
+    required this.inputtype, required this.text,
   });
   final TextInputType inputtype;
+  final String text;
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('Email'),
+       Text(text),
         TextField(
           decoration: const InputDecoration(
-           focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: keyPrimaryColor)
+              focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: keyPrimaryColor))
 
-            )
-           
-            // border: OutlineInputBorder(),
-          ),
+              // border: OutlineInputBorder(),
+              ),
           keyboardType: inputtype,
         ),
       ],

@@ -19,37 +19,31 @@ class ShowBottomSheetBodyFromSendTo extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-             
-         
-             
           children: [
-            const Text('Reset Passowrd',
-                style: Styles.textStyle26),
+            const Text('Reset Passowrd', style: Styles.textStyle26),
             const SizedBox(
               height: 20,
             ),
-             Text(
-                'Enter new password to your email to reset your passowrd',
+            Text('Enter new password to your email to reset your passowrd',
                 style: Styles.textStyle16.copyWith(color: kGreyColor)),
             const SizedBox(
               height: 20,
             ),
             const EmailTextField(
-              inputtype:
-                  TextInputType.emailAddress,
+              text: 'Email',
+              inputtype: TextInputType.emailAddress,
             ),
             const SizedBox(height: 20),
             const PasswordTextField(
               text: 'Passowrd',
             ),
             const SizedBox(height: 20),
-            const PasswordTextField(
-                text: 'Confirm Passowrd'),
+            const PasswordTextField(text: 'Confirm Passowrd'),
             const SizedBox(height: 50),
             CustomButton(
               text: 'Reset Passowrd ',
               onPressed: () {
-                GoRouter.of(context).push(AppRouter.keyresetpasswordsuccess);
+                GoRouter.of(context).push(AppRouter.kResetPasswordSuccess);
               },
             ),
           ],

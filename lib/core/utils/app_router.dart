@@ -1,16 +1,18 @@
 import 'package:go_router/go_router.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/forget_passowrd_view.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/login_screen_view.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/reset_password_success.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentation/views/forget_passowrd_view.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentation/views/login_view.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentation/views/reset_password_success.dart';
+import 'package:my_nectar_app/features/auth/sign_up/presentation/views/sign_up_view.dart';
 import 'package:my_nectar_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:my_nectar_app/features/splash/presentation/views/splash_view.dart';
 
 abstract class AppRouter {
-  static const keyonboardingview = '/onBoarding';
-  static const keyloginview = '/loginView';
-  static const keyforgetpassword = '/forgetPassword';
-  static const keysendcode= '/sendCode';
-  static const keyresetpasswordsuccess= '/resetPasswordSuccess';
+  static const kOnBoardingView = '/onBoarding';
+  static const kLoginView = '/loginView';
+  static const kForgetPassword = '/forgetPassword';
+  static const kSendCode= '/sendCode';
+  static const kResetPasswordSuccess= '/resetPasswordSuccess';
+  static const kSignUpView= '/signUpView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -18,23 +20,28 @@ abstract class AppRouter {
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: keyonboardingview,
+        path: kOnBoardingView,
         builder: (context, state) => const OnBoardingView(),
       ),
       GoRoute(
-        path: keyloginview,
+        path: kLoginView,
         builder: (context, state) => const LoginScreenView(),
         
       ),
         
       GoRoute(
-          path: keyforgetpassword,
+          path: kForgetPassword,
           builder: (context, state) => const ForgetPassowrdView(),
           
         ),
       GoRoute(
-          path: keyresetpasswordsuccess,
+          path: kResetPasswordSuccess,
           builder: (context, state) => const ResetPasswordSuccessView(),
+          
+        ),
+      GoRoute(
+          path: kSignUpView,
+          builder: (context, state) => const SignUpView(),
           
         ),
     ],

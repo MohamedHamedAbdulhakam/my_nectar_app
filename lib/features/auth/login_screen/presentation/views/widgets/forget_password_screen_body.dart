@@ -5,8 +5,8 @@ import 'package:my_nectar_app/core/utils/styles.dart';
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
 import 'package:my_nectar_app/core/widgets/email_text_field.dart';
 import 'package:my_nectar_app/core/widgets/password_text_field.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/widgets/show_bottom_sheet_body_from_continue.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentaion/views/widgets/show_bottom_sheet_body_from_send_to.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/show_bottom_sheet_body_from_continue.dart';
+import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/show_bottom_sheet_body_from_send_to.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 class ForgetPasswordScreenBody extends StatefulWidget {
@@ -53,6 +53,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
               const SizedBox(height: 30),
               // Email Input
               const EmailTextField(
+                text: 'Email',
                 inputtype: TextInputType.emailAddress,
               ),
               const SizedBox(height: 50),

@@ -38,7 +38,7 @@ class OnBoardingViewBody extends StatelessWidget {
               child: CustomButton(
                 text: 'Get started',
                 onPressed: () {
-                  GoRouter.of(context).push(AppRouter.keyloginview);
+                  GoRouter.of(context).push(AppRouter.kLoginView);
                 },
               )),
 

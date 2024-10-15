@@ -14,7 +14,7 @@ class ForgetPasswordSection extends StatelessWidget {
       
         child: GestureDetector(
             onTap: () {
-              GoRouter.of(context).push(AppRouter.keyforgetpassword);
+              GoRouter.of(context).push(AppRouter.kForgetPassword);
             },
             child: const Text('Forgot Password?')),
      
