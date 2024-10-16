@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
-import 'package:my_nectar_app/constants.dart';
-import 'package:my_nectar_app/core/utils/app_router.dart';
-import 'package:my_nectar_app/core/utils/assets.dart';
-import 'package:my_nectar_app/features/on_boarding/presentation/views/on_boarding_view.dart';
+
+import '../../../../../constants.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../on_boarding/presentation/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
