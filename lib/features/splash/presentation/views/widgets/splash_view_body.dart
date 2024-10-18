@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_nectar_app/features/home/presentaion/views/home_view.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/assets.dart';
@@ -22,7 +23,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         //     transition: Transition.leftToRight, duration: KTranstionDuration);
         // ignore: use_build_context_synchronously
         Navigator.of(context).push(MaterialPageRoute(builder: (con) {
-          return OnBoardingView();
+          return HomeView();
         }));
       },
     );
