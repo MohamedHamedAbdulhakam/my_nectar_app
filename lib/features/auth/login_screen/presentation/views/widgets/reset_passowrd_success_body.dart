@@ -53,7 +53,7 @@ class _ResetPassowrdSuccessBodyState extends State<ResetPassowrdSuccessBody> {
            Align(
                alignment: Alignment.center,
                child: Text(
-                 'Your change Password is Success \n            Welcome to our app',
+                 'Your change Password is Success  \n            Welcome to our app',
                  style: Styles.textStyle16.copyWith(color: kGreyColor),
                ))
          ],
