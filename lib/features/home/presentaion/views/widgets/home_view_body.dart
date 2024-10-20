@@ -5,70 +5,45 @@ class HomeViewBody extends StatelessWidget {
   final List<String> imagePaths = [
     'assets/homeImage.jpg',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Remove the main AppBar here
-      body: NestedScrollView(
-        
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return <Widget>[
-            SliverAppBar(
-              expandedHeight: 50.0, // Increase the height of the SliverAppBar
-              floating: true, // Keep it non-floating for a collapsing effect
-            // Pin the SliverAppBar when scrolled to the top
-             title: Text("data"),
-            ),
-            // SliverToBoxAdapter(
-            //   child: CustomScrollView(slivers: [
-            //     Text('data'),
-            //   ]),
-            // )
-          ];
-        },
-        body:Scaffold(
-          body: Expanded(
-              child:  Column( children: [
-             Container(
-                    height: 50,
-                    width: 200,
-                    color: Colors.black,
-                  ),
-            SingleChildScrollView(
-                child: Column(
-                  children: [
-                   
-                     Container(
-                      height: 550,
-                      width: 200,
-                      color: Colors.red,
-                    ),
-                     Container(
-                      height: 550,
-                      width: 200,
-                      color: Colors.red,
-                    ),
-                  ],
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            expandedHeight: 50.0,
+            floating: true,
+            title: Text("data"),
+          ),
+          // You need to wrap non-sliver widgets in SliverToBoxAdapter
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                Container(
+                  height: 50,
+                  width: 200,
+                  color: Colors.black,
                 ),
-              ),
-            
-          ], ),),
-       
-        )
-        
-        // body: ListView.builder(
-        //   itemCount: 20,
-        //   itemBuilder: (BuildContext context, int index) {
-        //     return ListTile(
-        //       title: Text("Item $index"),
-        //     );
-        //   },
-        // ),
+                // Use SingleChildScrollView inside a SliverToBoxAdapter
+                Container(
+                  height: 550,
+                  width: 200,
+                  color: Colors.red,
+                ),
+                Container(
+                  height: 550,
+                  width: 200,
+                  color: Colors.red,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
 }
-
 // 
 // import 'package:carousel_slider/carousel_options.dart';
 // import 'package:carousel_slider/carousel_slider.dart';
