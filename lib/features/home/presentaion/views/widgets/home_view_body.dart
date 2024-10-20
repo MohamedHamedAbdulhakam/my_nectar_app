@@ -1,4 +1,6 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:my_nectar_app/core/widgets/logo_section.dart';
 
 class HomeViewBody extends StatelessWidget {
   HomeViewBody({super.key});
@@ -10,66 +12,65 @@ class HomeViewBody extends StatelessWidget {
     return
         // Remove the main AppBar here
         NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                SliverAppBar(
-                  expandedHeight:
-                      50.0, // Increase the height of the SliverAppBar
-                  floating:
-                      true, // Keep it non-floating for a collapsing effect
-                  // Pin the SliverAppBar when scrolled to the top
-                  title: Text("data"),
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+        return <Widget>[
+          SliverAppBar(
+            expandedHeight: 80, // Increase the height of the SliverAppBar
+            floating: true,
+            // true, // Keep it non-floating for a collapsing effect
+            // Pin the SliverAppBar when scrolled to the top
+            title: LogoSection(),
+          ),
+          
+          // SliverToBoxAdapter(
+          //   child: CustomScrollView(slivers: [
+          //     Text('data'),
+          //   ]),
+          // )
+        ];
+      },
+      body: Scaffold(
+        body: Column(
+          children: [
+            Container(
+              height: 50,
+              width: double.infinity,
+              color: Colors.black,
+            ),
+            Expanded(
+                child: SingleChildScrollView(
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                  aspectRatio: 386/ 114,
+                  viewportFraction: 0.8,
                 ),
-                // SliverToBoxAdapter(
-                //   child: CustomScrollView(slivers: [
-                //     Text('data'),
-                //   ]),
-                // )
-              ];
-            },
-            body: Scaffold(
-              body: 
-                 Column(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 200,
-                      color: Colors.black,
-                    ),
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 550,
-                              width: 200,
-                              color: Colors.red,
-                            ),
-                            Container(
-                              height: 550,
-                              width: 200,
-                              color: Colors.red,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              
-            )
+                items: imagePaths.map((path) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Image.asset(
+                        path,
+                        fit: BoxFit.cover,
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
+            )),
+          ],
+        ),
+      ),
+    );
 
-            // body: ListView.builder(
-            //   itemCount: 20,
-            //   itemBuilder: (BuildContext context, int index) {
-            //     return ListTile(
-            //       title: Text("Item $index"),
-            //     );
-            //   },
-            // ),
-
-            );
+    // body: ListView.builder(
+    //   itemCount: 20,
+    //   itemBuilder: (BuildContext context, int index) {
+    //     return ListTile(
+    //       title: Text("Item $index"),
+    //     );
+    //   },
+    // ),
   }
 }
 
