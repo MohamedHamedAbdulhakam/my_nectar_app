@@ -14,6 +14,8 @@ class HomeViewBody extends StatelessWidget {
           SliverAppBar(
             expandedHeight: 50.0,
             floating: true,
+            // snap: true,
+            // pinned: true,
             title: Text("data"),
           ),
           // You need to wrap non-sliver widgets in SliverToBoxAdapter
