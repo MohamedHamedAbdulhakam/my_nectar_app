@@ -5,47 +5,74 @@ class HomeViewBody extends StatelessWidget {
   final List<String> imagePaths = [
     'assets/homeImage.jpg',
   ];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            expandedHeight: 50.0,
-            floating: true,
-            // snap: true,
-            // pinned: true,
-            title: Text("data"),
-          ),
-          // You need to wrap non-sliver widgets in SliverToBoxAdapter
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                Container(
-                  height: 50,
-                  width: 200,
-                  color: Colors.black,
+    return
+        // Remove the main AppBar here
+        NestedScrollView(
+            headerSliverBuilder:
+                (BuildContext context, bool innerBoxIsScrolled) {
+              return <Widget>[
+                SliverAppBar(
+                  expandedHeight:
+                      50.0, // Increase the height of the SliverAppBar
+                  floating:
+                      true, // Keep it non-floating for a collapsing effect
+                  // Pin the SliverAppBar when scrolled to the top
+                  title: Text("data"),
                 ),
-                // Use SingleChildScrollView inside a SliverToBoxAdapter
-                Container(
-                  height: 550,
-                  width: 200,
-                  color: Colors.red,
+                // SliverToBoxAdapter(
+                //   child: CustomScrollView(slivers: [
+                //     Text('data'),
+                //   ]),
+                // )
+              ];
+            },
+            body: Scaffold(
+              body: 
+                 Column(
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 200,
+                      color: Colors.black,
+                    ),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 550,
+                              width: 200,
+                              color: Colors.red,
+                            ),
+                            Container(
+                              height: 550,
+                              width: 200,
+                              color: Colors.red,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 550,
-                  width: 200,
-                  color: Colors.red,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
+              
+            )
+
+            // body: ListView.builder(
+            //   itemCount: 20,
+            //   itemBuilder: (BuildContext context, int index) {
+            //     return ListTile(
+            //       title: Text("Item $index"),
+            //     );
+            //   },
+            // ),
+
+            );
   }
 }
+
 // 
 // import 'package:carousel_slider/carousel_options.dart';
 // import 'package:carousel_slider/carousel_slider.dart';
