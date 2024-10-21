@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/home_view.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
+import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/assets.dart';
-import '../../../../on_boarding/presentation/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -22,9 +22,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         // Get.to(() => const HomeView(),
         //     transition: Transition.leftToRight, duration: KTranstionDuration);
         // ignore: use_build_context_synchronously
-        Navigator.of(context).push(MaterialPageRoute(builder: (con) {
-          return HomeView();
-        }));
+        GoRouter.of(context).push(AppRouter.kOnBoardingView);
       },
     );
   }
