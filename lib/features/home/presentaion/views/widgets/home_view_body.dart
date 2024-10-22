@@ -14,7 +14,7 @@ class HomeViewBody extends StatelessWidget {
         NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
-          SliverAppBar(
+          const SliverAppBar(
             expandedHeight: 80, // Increase the height of the SliverAppBar
             floating: true,
             // true, // Keep it non-floating for a collapsing effect
@@ -46,7 +46,7 @@ class HomeViewBody extends StatelessWidget {
                 // side: BorderSide(color: Colors.blue), // Border
               ),
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Button padding
-              child: Row(
+              child: const Row(
                 mainAxisSize: MainAxisSize.min, // To wrap the button size around content
                 children: [
                   Icon(
