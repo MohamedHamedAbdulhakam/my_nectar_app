@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/constants.dart';
-import 'package:my_nectar_app/core/utils/assets.dart';
-import 'package:my_nectar_app/core/utils/styles.dart';
-import 'package:my_nectar_app/core/widgets/custom_button.dart';
-import 'package:my_nectar_app/core/widgets/email_text_field.dart';
-import 'package:my_nectar_app/core/widgets/logo_section.dart';
-import 'package:my_nectar_app/core/widgets/text_section.dart';
 
-import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/show_bottom_sheet_body_from_continue.dart';
+import '../../../../../../core/utils/assets.dart';
+import '../../../../../../core/widgets/custom_button.dart';
+import '../../../../../../core/widgets/email_text_field.dart';
+import '../../../../../../core/widgets/logo_section.dart';
+import '../../../../../../core/widgets/text_section.dart';
+import 'show_bottom_sheet_body_from_continue.dart';
 
 class ForgetPasswordScreenBody extends StatefulWidget {
   const ForgetPasswordScreenBody({super.key});

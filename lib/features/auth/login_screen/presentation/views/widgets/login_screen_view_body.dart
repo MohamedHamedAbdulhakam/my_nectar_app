@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:my_nectar_app/constants.dart';
-import 'package:my_nectar_app/core/utils/app_router.dart';
-import 'package:my_nectar_app/core/widgets/logo_section.dart';
-import 'package:my_nectar_app/core/widgets/text_section.dart';
-import 'package:my_nectar_app/core/widgets/status_of_having_account_section.dart';
-import 'package:my_nectar_app/features/auth/login_screen/presentation/views/widgets/forget_password_section.dart';
+
 import '../../../../../../core/utils/assets.dart';
-import '../../../../../../core/utils/styles.dart';
 import '../../../../../../core/widgets/custom_button.dart';
 import '../../../../../../core/widgets/email_text_field.dart';
+import '../../../../../../core/widgets/logo_section.dart';
 import '../../../../../../core/widgets/password_text_field.dart';
+import '../../../../../../core/widgets/status_of_having_account_section.dart';
+import '../../../../../../core/widgets/text_section.dart';
+import 'forget_password_section.dart';
 
 class LoginScreenViewBody extends StatelessWidget {
   const LoginScreenViewBody({super.key});
