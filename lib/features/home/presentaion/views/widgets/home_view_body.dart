@@ -45,7 +45,7 @@ class HomeViewBody extends StatelessWidget {
                 borderRadius: BorderRadius.circular(16.0), // Rounded corners
                 // side: BorderSide(color: Colors.blue), // Border
               ),
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Button padding
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0), // Button padding
               child: const Row(
                 mainAxisSize: MainAxisSize.min, // To wrap the button size around content
                 children: [
