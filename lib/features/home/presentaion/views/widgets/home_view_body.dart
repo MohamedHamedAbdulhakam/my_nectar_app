@@ -1,5 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:my_nectar_app/constants.dart';
+import 'package:my_nectar_app/core/utils/styles.dart';
 import 'package:my_nectar_app/core/widgets/logo_section.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -7,6 +9,7 @@ class HomeViewBody extends StatelessWidget {
   final List<String> imagePaths = [
     'assets/homeImage.jpg',
   ];
+  
   @override
   Widget build(BuildContext context) {
     return
@@ -66,27 +69,46 @@ class HomeViewBody extends StatelessWidget {
                        ),
            ),
       
-            Expanded(
-                child: SingleChildScrollView(
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  autoPlay: true,
-                  enlargeCenterPage: true,
-                  aspectRatio: 386/ 114,
-                  viewportFraction: 0.8,
-                ),
-                items: imagePaths.map((path) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Image.asset(
-                        path,
-                        fit: BoxFit.cover,
-                      );
-                    },
+            SingleChildScrollView(
+                          child: CarouselSlider(
+            options: CarouselOptions(
+              autoPlay: true,
+              enlargeCenterPage: true,
+              aspectRatio: 386/ 114,
+              viewportFraction: 0.8,
+            ),
+            items: imagePaths.map((path) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Image.asset(
+                    path,
+                    fit: BoxFit.cover,
                   );
-                }).toList(),
+                },
+              );
+            }).toList(),
+                          ),
+                        ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Exclusive Offer',style: Styles.textStyle26,),
+                  TextButton(
+                  onPressed: () {},
+                  child: Text('see all',style: Styles.textStyle16.copyWith(color: keyPrimaryColor),),
+                ),
+                  
+                ],
               ),
-            )),
+              
+            ),
+            SizedBox(
+              height: 200,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  Card()
           ],
         ),
       ),
