@@ -4,6 +4,7 @@ import 'package:my_nectar_app/constants.dart';
 import 'package:my_nectar_app/core/utils/assets.dart';
 import 'package:my_nectar_app/core/utils/styles.dart';
 import 'package:my_nectar_app/core/widgets/card_section.dart';
+import 'package:my_nectar_app/core/widgets/custom_list_view.dart';
 import 'package:my_nectar_app/core/widgets/logo_section.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -36,101 +37,136 @@ class HomeViewBody extends StatelessWidget {
         ];
       },
       body: Scaffold(
-        body: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
-              child: MaterialButton(
-                onPressed: () {
-                  print("Search Store button pressed");
-                },
-                minWidth: double.infinity,
-                color: Colors.grey[200], // Background color
-                elevation: 0, // No shadow for a flat appearance
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.0), // Rounded corners
-                  // side: BorderSide(color: Colors.blue), // Border
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+                child: MaterialButton(
+                  onPressed: () {
+                    print("Search Store button pressed");
+                  },
+                  minWidth: double.infinity,
+                  color: Colors.grey[200], // Background color
+                  elevation: 0, // No shadow for a flat appearance
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0), // Rounded corners
+                    // side: BorderSide(color: Colors.blue), // Border
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 12.0), // Button padding
+                  child: const Row(
+                    mainAxisSize: MainAxisSize
+                        .min, // To wrap the button size around content
+                    children: [
+                      Icon(
+                        Icons.search, // Search icon
+                        color: Colors.black54,
+                      ),
+                      SizedBox(width: 10), // Spacing between icon and text
+                      Text(
+                        'Search Store',
+                        style: TextStyle(
+                          color: Colors.black54, // Text color
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 16.0, vertical: 12.0), // Button padding
-                child: const Row(
-                  mainAxisSize: MainAxisSize
-                      .min, // To wrap the button size around content
+              ),
+              SingleChildScrollView(
+                child: CarouselSlider(
+                  options: CarouselOptions(
+                    autoPlay: true,
+                    enlargeCenterPage: true,
+                    aspectRatio: 386 / 114,
+                    viewportFraction: 0.8,
+                  ),
+                  items: imagePaths.map((path) {
+                    return Builder(
+                      builder: (BuildContext context) {
+                        return Image.asset(
+                          path,
+                          fit: BoxFit.cover,
+                        );
+                      },
+                    );
+                  }).toList(),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.search, // Search icon
-                      color: Colors.black54,
-                    ),
-                    SizedBox(width: 10), // Spacing between icon and text
                     Text(
-                      'Search Store',
-                      style: TextStyle(
-                        color: Colors.black54, // Text color
-                        fontSize: 16.0,
+                      'Exclusive Offer',
+                      style: Styles.textStyle26,
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'see all',
+                        style:
+                            Styles.textStyle16.copyWith(color: keyPrimaryColor),
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-            SingleChildScrollView(
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  autoPlay: true,
-                  enlargeCenterPage: true,
-                  aspectRatio: 386 / 114,
-                  viewportFraction: 0.8,
-                ),
-                items: imagePaths.map((path) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Image.asset(
-                        path,
-                        fit: BoxFit.cover,
-                      );
-                    },
-                  );
-                }).toList(),
+              SizedBox(
+                height: 270,
+                child: CustomListView(),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Exclusive Offer',
-                    style: Styles.textStyle26,
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Best Selling',
+                        style: Styles.textStyle26,
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'see all',
+                          style:
+                              Styles.textStyle16.copyWith(color: keyPrimaryColor),
+                        ),
+                      ),
+                    ],
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'see all',
-                      style:
-                          Styles.textStyle16.copyWith(color: keyPrimaryColor),
-                    ),
+              ),
+              
+              SizedBox(
+                height: 270,
+                child: CustomListView(),
+              ),
+               Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Groceries',
+                        style: Styles.textStyle26,
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          'see all',
+                          style:
+                              Styles.textStyle16.copyWith(color: keyPrimaryColor),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
               ),
-            ),
-            SizedBox(
-              height: 270,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    height: 270,
-                    width: 200,
-                    child: const Padding(
-                      padding:  EdgeInsets.symmetric(horizontal: 8),
-                      child: CardSection(),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ],
+              CustomListView()
+            ],
+          ),
         ),
       ),
     );
@@ -145,41 +181,3 @@ class HomeViewBody extends StatelessWidget {
     // ),
   }
 }
-
-
-// 
-// import 'package:carousel_slider/carousel_options.dart';
-// import 'package:carousel_slider/carousel_slider.dart';
-// import 'package:flutter/material.dart';
-
-// class HomeViewBody extends StatelessWidget {
-//   const HomeViewBody({super.key});
-//    HomeViewBody({super.key});
-//   final List<String> imagePaths = [
-//     'assets/homeImage.jpg',
-//   ];
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Placeholder();
-//   }
-// }
-//     return CarouselSlider(      options: CarouselOptions(
-//          autoPlay: true,
-//          enlargeCenterPage: true,
-//          aspectRatio: 16 / 9,
-//          viewportFraction: 0.8,
-//        ),
-//        items: imagePaths.map((path) {
-//          return Builder(
-//            builder: (BuildContext context) {
-//              return Image.asset(
-//                path,
-//                fit: BoxFit.cover,
-//              );
-//            },
-//          );
-//        }).toList(),
-//      );
-//    }
-//  }
-
