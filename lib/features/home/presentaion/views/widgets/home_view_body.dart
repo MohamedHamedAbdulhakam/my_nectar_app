@@ -1,12 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/constants.dart';
-import 'package:my_nectar_app/core/utils/assets.dart';
-import 'package:my_nectar_app/core/utils/styles.dart';
-import 'package:my_nectar_app/core/widgets/card_section.dart';
-import 'package:my_nectar_app/core/widgets/custom_list_view.dart';
-import 'package:my_nectar_app/core/widgets/logo_section.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/widgets/text_section_in_home_view.dart';
+
+import '../../../../../core/widgets/custom_list_view.dart';
+import '../../../../../core/widgets/logo_section.dart';
+import 'text_section_in_home_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   HomeViewBody({super.key});
@@ -96,19 +93,19 @@ class HomeViewBody extends StatelessWidget {
                   }).toList(),
                 ),
               ),
-              TextSectionInHomeView(text: 'Exclusive Offer',),
-              SizedBox(
+             const TextSectionInHomeView(text: 'Exclusive Offer',),
+              const SizedBox(
                 height: 270,
                 child: CustomListView(),
               ),
-              TextSectionInHomeView(text: 'Best Selling'),
+              const TextSectionInHomeView(text: 'Best Selling'),
               
-              SizedBox(
+              const SizedBox(
                 height: 270,
                 child: CustomListView(),
               ),
-             TextSectionInHomeView(text: 'Groceries'),
-              CustomListView()
+             const TextSectionInHomeView(text: 'Groceries'),
+              const CustomListView()
             ],
           ),
         ),
