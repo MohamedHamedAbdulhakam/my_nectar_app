@@ -6,6 +6,7 @@ import 'package:my_nectar_app/core/utils/styles.dart';
 import 'package:my_nectar_app/core/widgets/card_section.dart';
 import 'package:my_nectar_app/core/widgets/custom_list_view.dart';
 import 'package:my_nectar_app/core/widgets/logo_section.dart';
+import 'package:my_nectar_app/features/home/presentaion/views/widgets/text_section_in_home_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   HomeViewBody({super.key});
@@ -95,75 +96,18 @@ class HomeViewBody extends StatelessWidget {
                   }).toList(),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Exclusive Offer',
-                      style: Styles.textStyle26,
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'see all',
-                        style:
-                            Styles.textStyle16.copyWith(color: keyPrimaryColor),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              TextSectionInHomeView(text: 'Exclusive Offer',),
               SizedBox(
                 height: 270,
                 child: CustomListView(),
               ),
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Best Selling',
-                        style: Styles.textStyle26,
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'see all',
-                          style:
-                              Styles.textStyle16.copyWith(color: keyPrimaryColor),
-                        ),
-                      ),
-                    ],
-                  ),
-              ),
+              TextSectionInHomeView(text: 'Best Selling'),
               
               SizedBox(
                 height: 270,
                 child: CustomListView(),
               ),
-               Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Groceries',
-                        style: Styles.textStyle26,
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          'see all',
-                          style:
-                              Styles.textStyle16.copyWith(color: keyPrimaryColor),
-                        ),
-                      ),
-                    ],
-                  ),
-              ),
+             TextSectionInHomeView(text: 'Groceries'),
               CustomListView()
             ],
           ),
@@ -181,3 +125,4 @@ class HomeViewBody extends StatelessWidget {
     // ),
   }
 }
+
