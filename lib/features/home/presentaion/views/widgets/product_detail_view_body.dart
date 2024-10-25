@@ -11,7 +11,7 @@ class ProductDetailViewBody extends StatelessWidget {
         leading: Icon(Icons.arrow_back_ios, color: Colors.black),
         actions: [
           IconButton(
-            icon: Icon(Icons.share, color: Colors.black),
+            icon: Icon(Icons.drive_folder_upload, color: Colors.black),
             onPressed: () {
               // Share button action
             },
@@ -46,7 +46,8 @@ class ProductDetailViewBody extends StatelessWidget {
             ),
             // Product Title and Price Row
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -77,23 +78,7 @@ class ProductDetailViewBody extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      // Decrease quantity button
-                      IconButton(
-                        icon: Icon(Icons.remove),
-                        onPressed: () {},
-                        color: Colors.black,
-                      ),
-                      Text('1', style: TextStyle(fontSize: 18)),
-                      // Increase quantity button
-                      IconButton(
-                        icon: Icon(Icons.add),
-                        onPressed: () {},
-                        color: Colors.black,
-                      ),
-                    ],
-                  ),
+                  IncreamentAndDecreamentSectionInDetailsView(),
                   Text(
                     '\$4.99',
                     style: TextStyle(
@@ -109,7 +94,8 @@ class ProductDetailViewBody extends StatelessWidget {
               title: Text('Product Detail'),
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 8.0),
                   child: Text(
                     'Apples are nutritious. Apples may be good for weight loss. '
                     'Apples may be good for your heart. As part of a healthful '
@@ -135,7 +121,8 @@ class ProductDetailViewBody extends StatelessWidget {
                           color: Colors.grey[200],
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        child: Text('100gr', style: TextStyle(color: Colors.grey)),
+                        child:
+                            Text('100gr', style: TextStyle(color: Colors.grey)),
                       ),
                     ],
                   ),
@@ -154,16 +141,19 @@ class ProductDetailViewBody extends StatelessWidget {
               ),
             ),
             // Add to Basket Button
-           const  Padding(
+            Padding(
               padding: const EdgeInsets.all(16.0),
               child: SizedBox(
-                width: double.infinity,
-                child: CustomButton(text: 'Add To Basket')
-              ),
+                  width: double.infinity,
+                  child: CustomButton(
+                    text: 'Add To Basket',
+                    onPressed: () {},
+                  )),
             ),
           ],
         ),
       ),
     );
   }
-  }
+}
+

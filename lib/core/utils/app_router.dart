@@ -3,6 +3,7 @@ import 'package:my_nectar_app/features/auth/login_screen/presentation/views/forg
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/login_view.dart';
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/reset_password_success.dart';
 import 'package:my_nectar_app/features/auth/sign_up/presentation/views/sign_up_view.dart';
+import 'package:my_nectar_app/features/home/presentaion/product_details_view.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/home_view.dart';
 import 'package:my_nectar_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:my_nectar_app/features/splash/presentation/views/splash_view.dart';
@@ -15,6 +16,7 @@ abstract class AppRouter {
   static const kResetPasswordSuccess= '/resetPasswordSuccess';
   static const kSignUpView= '/signUpView';
   static const kHomeView= '/homeView';
+  static const kDetailsView= '/detailsView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -49,6 +51,11 @@ abstract class AppRouter {
       GoRoute(
           path: kHomeView,
           builder: (context, state) => const HomeView(),
+          
+        ),
+      GoRoute(
+          path: kDetailsView,
+          builder: (context, state) => const ProductDetailsView(),
           
         ),
     ],

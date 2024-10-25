@@ -13,7 +13,7 @@ class CardSection extends StatefulWidget {
 }
 
 class _CardSectionState extends State<CardSection> {
-  int count = 0;
+ static int count = 0;
   @override
   Widget build(BuildContext context) {
     return Card(
