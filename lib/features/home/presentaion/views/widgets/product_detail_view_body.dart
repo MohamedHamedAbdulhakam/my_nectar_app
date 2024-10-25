@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
+import 'package:my_nectar_app/features/home/presentaion/views/widgets/increament_and_decreament_section_in_deatail_view.dart';
 
 class ProductDetailViewBody extends StatelessWidget {
   const ProductDetailViewBody({super.key});
@@ -73,12 +74,12 @@ class ProductDetailViewBody extends StatelessWidget {
               ),
             ),
             // Quantity Selector and Price
-            Padding(
+          const  Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IncreamentAndDecreamentSectionInDetailsView(),
+               IncreamentAndDecreamentSectionInDetailsView(),
                   Text(
                     '\$4.99',
                     style: TextStyle(
@@ -90,6 +91,7 @@ class ProductDetailViewBody extends StatelessWidget {
               ),
             ),
             // Product Details Section
+          
             ExpansionTile(
               title: Text('Product Detail'),
               children: [

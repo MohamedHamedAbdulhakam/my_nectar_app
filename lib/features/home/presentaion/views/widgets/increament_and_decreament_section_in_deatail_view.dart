@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
-class IncreamentAndDecreamentSectionInDetailsView extends StatelessWidget {
+class IncreamentAndDecreamentSectionInDetailsView extends StatefulWidget {
   const IncreamentAndDecreamentSectionInDetailsView({
     super.key,
   });
+
+  @override
+  State<IncreamentAndDecreamentSectionInDetailsView> createState() => _IncreamentAndDecreamentSectionInDetailsViewState();
+}
+
+class _IncreamentAndDecreamentSectionInDetailsViewState extends State<IncreamentAndDecreamentSectionInDetailsView> {
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +18,32 @@ class IncreamentAndDecreamentSectionInDetailsView extends StatelessWidget {
       children: [
         // Decrease quantity button
         IconButton(
-          icon: Icon(Icons.remove),
+          icon: const Icon(Icons.remove),
           onPressed: () {
-        
+          if(count>0){
+              count--;
+
+          }
+            
+            setState(() {
+              
+            });
+            
           },
           color: Colors.black,
         ),
-        Text('1', style: TextStyle(fontSize: 18)),
+        Text(count.toString(), style: const TextStyle(fontSize: 18)),
         // Increase quantity button
         IconButton(
-          icon: Icon(Icons.add),
-          onPressed: () {},
+          icon: const Icon(Icons.add),
+          onPressed: () {
+
+              count++;
+           
+            setState(() {
+              
+            });
+          },
           color: Colors.black,
         ),
       ],
