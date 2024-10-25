@@ -1,9 +1,13 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_nectar_app/core/widgets/custom_button.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/widgets/increament_and_decreament_section_in_deatail_view.dart';
 
 class ProductDetailViewBody extends StatelessWidget {
-  const ProductDetailViewBody({super.key});
+   ProductDetailViewBody({super.key});
+final List<String> imagePaths = [
+    'assets/banana.png',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +29,25 @@ class ProductDetailViewBody extends StatelessWidget {
         child: Column(
           children: [
             // Product Image
-            Container(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset(
-                'assets/apple.png', // Replace with your image asset
-                height: 200,
-                width: double.infinity,
-                fit: BoxFit.contain,
+               CarouselSlider(
+              options: CarouselOptions(
+                autoPlay: false,
+                enlargeCenterPage: true,
+                aspectRatio: 500 / 200,
+                viewportFraction: 0.8,
               ),
+              items: imagePaths.map((path) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Image.asset(
+                      path,
+                      fit: BoxFit.cover,
+                    );
+                  },
+                );
+              }).toList(),
             ),
+            const SizedBox(height: 30,),
             // Dots indicator placeholder
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -45,6 +59,7 @@ class ProductDetailViewBody extends StatelessWidget {
                 Icon(Icons.circle, size: 10, color: Colors.grey),
               ],
             ),
+          const SizedBox(height: 40,),
             // Product Title and Price Row
           const Padding(
               padding:
@@ -75,7 +90,7 @@ class ProductDetailViewBody extends StatelessWidget {
             ),
             // Quantity Selector and Price
           const  Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding:  EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -92,11 +107,11 @@ class ProductDetailViewBody extends StatelessWidget {
             ),
             // Product Details Section
           
-            ExpansionTile(
+           const  ExpansionTile(
               title: Text('Product Detail'),
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding:  EdgeInsets.symmetric(
                       horizontal: 16.0, vertical: 8.0),
                   child: Text(
                     'Apples are nutritious. Apples may be good for weight loss. '
@@ -108,30 +123,33 @@ class ProductDetailViewBody extends StatelessWidget {
               ],
             ),
             // Nutritions and Reviews Section
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
+             const  ExpansionTile(
+              title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Text('Nutritions', style: TextStyle(fontSize: 16)),
-                      SizedBox(width: 10),
-                      Container(
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child:
-                            Text('100gr', style: TextStyle(color: Colors.grey)),
-                      ),
-                    ],
+                  Text('Nutritions', style: TextStyle(fontSize: 16)),
+               Text('100gr', style: TextStyle(color: Colors.grey)),
+                ],
+              ),
+              children: [
+                Padding(
+                  padding:  EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 8.0),
+                  child: Text(
+                    'Apples are nutritious. Apples may be good for weight loss. '
+                    'Apples may be good for your heart. As part of a healthful '
+                    'and varied diet.',
+                    style: TextStyle(color: Colors.grey),
                   ),
-                  Row(
+                ),
+              ],
+            ),
+             const  ExpansionTile(
+              title:    Row(
+               
                     children: [
                       Text('Review', style: TextStyle(fontSize: 16)),
-                      SizedBox(width: 10),
+                      SizedBox(width: 180),
                       Icon(Icons.star, color: Colors.orange, size: 18),
                       Icon(Icons.star, color: Colors.orange, size: 18),
                       Icon(Icons.star, color: Colors.orange, size: 18),
@@ -139,9 +157,20 @@ class ProductDetailViewBody extends StatelessWidget {
                       Icon(Icons.star_half, color: Colors.orange, size: 18),
                     ],
                   ),
-                ],
-              ),
+              children: [
+                Padding(
+                  padding:  EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 8.0),
+                  child: Text(
+                    'Apples are nutritious. Apples may be good for weight loss. '
+                    'Apples may be good for your heart. As part of a healthful '
+                    'and varied diet.',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+              ],
             ),
+            
             // Add to Basket Button
             Padding(
               padding: const EdgeInsets.all(16.0),
