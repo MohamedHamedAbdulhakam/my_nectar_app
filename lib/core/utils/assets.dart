@@ -7,4 +7,5 @@ class Assets {
   static const actionDoneImage = 'assets/actiondone.png';
   static const appleImage = 'assets/apple.png';
   static const bananaImage = 'assets/banana.png';
+  static const palsesImage = 'assets/palses.png';
 }
