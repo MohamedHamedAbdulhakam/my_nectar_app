@@ -12,12 +12,17 @@ class CustomListView extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: 10,
       itemBuilder: (BuildContext context, int index) {
-        return Container(
-          height: 270,
-          width: 200,
-          child: const Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 8),
-            child: CardSection(),
+        return GestureDetector(
+          onTap: (){
+            
+          },
+          child: Container(
+            height: 270,
+            width: 200,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              child: CardSection(),
+            ),
           ),
         );
       },
