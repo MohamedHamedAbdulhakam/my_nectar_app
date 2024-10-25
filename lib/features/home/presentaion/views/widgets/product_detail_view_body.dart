@@ -9,10 +9,10 @@ class ProductDetailViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios, color: Colors.black),
+        leading: const Icon(Icons.arrow_back_ios, color: Colors.black),
         actions: [
           IconButton(
-            icon: Icon(Icons.drive_folder_upload, color: Colors.black),
+            icon: const Icon(Icons.drive_folder_upload, color: Colors.black),
             onPressed: () {
               // Share button action
             },
@@ -35,7 +35,7 @@ class ProductDetailViewBody extends StatelessWidget {
               ),
             ),
             // Dots indicator placeholder
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(Icons.circle, size: 10, color: Colors.grey),
@@ -46,9 +46,9 @@ class ProductDetailViewBody extends StatelessWidget {
               ],
             ),
             // Product Title and Price Row
-            Padding(
+          const Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                 EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
