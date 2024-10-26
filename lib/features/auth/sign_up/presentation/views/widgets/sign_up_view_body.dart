@@ -29,7 +29,7 @@ class SignUpViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-             LogoSection(),
+             const LogoSection(height: 80,),
               const SizedBox(height: 80),
               const TextSection(textOne: 'Sign Up', textTwo: 'Enter your credentials to continue'),
               const SizedBox(height: 30),

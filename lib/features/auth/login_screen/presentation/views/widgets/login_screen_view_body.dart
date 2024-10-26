@@ -27,7 +27,7 @@ class LoginScreenViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const LogoSection(),
+              const LogoSection(height: 80,),
               const SizedBox(height: 80),
              const  TextSection(
                 textOne: 'Loging',

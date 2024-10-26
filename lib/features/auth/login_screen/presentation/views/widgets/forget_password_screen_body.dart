@@ -32,7 +32,7 @@ class _ForgetPasswordScreenBodyState extends State<ForgetPasswordScreenBody> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const LogoSection(),
+              const LogoSection(height: 80,),
               const SizedBox(height: 80),
 
               const TextSection(textOne: 'Forget Password', textTwo: 'Enter your email for verification process we will send 5 digit code to your email'),
