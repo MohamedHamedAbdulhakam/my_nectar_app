@@ -1,7 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/core/widgets/custom_button.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/widgets/increament_and_decreament_section_in_deatail_view.dart';
+
+import '../../../../../core/widgets/custom_button.dart';
+import 'increament_and_decreament_section_in_deatail_view.dart';
 
 class ProductDetailViewBody extends StatelessWidget {
    ProductDetailViewBody({super.key});
@@ -13,7 +14,10 @@ final List<String> imagePaths = [
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back_ios, color: Colors.black),
+        leading:IconButton(onPressed: (){
+           Navigator.pop(context); 
+        }, icon:Icon(Icons.drive_folder_upload, color: Colors.black), ) ,
+        // leading: const Icon(Icons.arrow_back_ios, color: Colors.black),
         actions: [
           IconButton(
             icon: const Icon(Icons.drive_folder_upload, color: Colors.black),
