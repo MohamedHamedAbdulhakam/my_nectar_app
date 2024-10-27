@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/widgets/custom_list_view.dart';
-import 'carosel_slider.dart';
+import 'carous_slider_home_view.dart';
 import 'categoriesa_list_view.dart';
 import 'searsh_bottom_for_home_view.dart';
 import 'sliver_app_bar_for_home_view.dart';

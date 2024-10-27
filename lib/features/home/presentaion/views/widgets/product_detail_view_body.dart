@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:my_nectar_app/features/home/presentaion/views/widgets/carouse_slider_details_view.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
 import 'increament_and_decreament_section_in_deatail_view.dart';
@@ -33,24 +34,7 @@ final List<String> imagePaths = [
         child: Column(
           children: [
             // Product Image
-               CarouselSlider(
-              options: CarouselOptions(
-                autoPlay: false,
-                enlargeCenterPage: true,
-                aspectRatio: 500 / 200,
-                viewportFraction: 0.8,
-              ),
-              items: imagePaths.map((path) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Image.asset(
-                      path,
-                      fit: BoxFit.cover,
-                    );
-                  },
-                );
-              }).toList(),
-            ),
+               CarousSliderDetailsViews(imagePaths: imagePaths),
             const SizedBox(height: 30,),
             // Dots indicator placeholder
             const Row(
