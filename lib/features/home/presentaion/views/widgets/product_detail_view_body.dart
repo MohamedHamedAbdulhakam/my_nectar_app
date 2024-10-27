@@ -1,11 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/widgets/expantion_tile_details_view.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/widgets/name_of_product.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
-import 'carouse_slider_details_view.dart';
 import 'increament_and_decreament_section_in_deatail_view.dart';
-import 'three_point_under_carouse_slider.dart';
 
 class ProductDetailViewBody extends StatelessWidget {
   ProductDetailViewBody({super.key});
@@ -38,23 +36,64 @@ class ProductDetailViewBody extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CarousSliderDetailsViews(imagePaths: imagePaths),
+            // Product Image
+            CarouselSlider(
+              options: CarouselOptions(
+                autoPlay: false,
+                enlargeCenterPage: true,
+                aspectRatio: 500 / 200,
+                viewportFraction: 0.8,
+              ),
+              items: imagePaths.map((path) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Image.asset(
+                      path,
+                      fit: BoxFit.cover,
+                    );
+                  },
+                );
+              }).toList(),
+            ),
             const SizedBox(
               height: 30,
             ),
-
-            const ThreePointsUnderCarouseSlider(),
+            // Dots indicator placeholder
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.circle, size: 10, color: Colors.grey),
+                SizedBox(width: 5),
+                Icon(Icons.circle, size: 10, color: Colors.green),
+                SizedBox(width: 5),
+                Icon(Icons.circle, size: 10, color: Colors.grey),
+              ],
+            ),
             const SizedBox(
               height: 40,
             ),
-
+            // Product Title and Price Row
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  NameOfProduct(
-                    nameOfProduct: 'Natural Red Apple',
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Naturel Red Apple',
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        '1kg, Price',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
                   ),
                   Icon(Icons.favorite_border, color: Colors.grey),
                 ],
@@ -78,45 +117,21 @@ class ProductDetailViewBody extends StatelessWidget {
               ),
             ),
             // Product Details Section
-
-            //  ExpantionTileDetailsView(
-            //   title: 'Product Detail',
-            //   explantion:
-            //       'Apples are nutritious. Apples may be good for weight loss. '
-            //       'Apples may be good for your heart. As part of a healthful '
-            //       'and varied diet.',
-            // ),
-        ExpantionTileDetailsView(
-          rating: false,
-          title: "dfdfdf" ,
-          description: 'dfdsfsdf sdfhdsfjhfsjdfh  sdfhjdsf ds fhdsjfh sdfdsjfh dsjfh asdf sdhfj asdkfh ih asuidf',
-
-        ),
-            const ExpansionTile(
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            ExpantionTileDetailsView(
+              title: 'Nutritions',
+              description:
+                  'Apples are nutritious. Apples may be good for weight loss. '
+                  'Apples may be good for your heart. As part of a healthful '
+                  'and varied diet.',
+              widget: Row(
                 children: [
-                  Text('Nutritions', style: TextStyle(fontSize: 16)),
-                  Text('100gr', style: TextStyle(color: Colors.grey)),
+                  Icon(Icons.star, color: Colors.orange, size: 18),
+                  Icon(Icons.star, color: Colors.orange, size: 18),
+                  Icon(Icons.star, color: Colors.orange, size: 18),
+                  Icon(Icons.star, color: Colors.orange, size: 18),
+                  Icon(Icons.star_half, color: Colors.orange, size: 18),
                 ],
               ),
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  child: Text(
-                    'Apples are nutritious. Apples may be good for weight loss. '
-                    'Apples may be good for your heart. As part of a healthful '
-                    'and varied diet.',
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ),
-              ],
-            ),
-            ExpantionTileDetailsView(
-              title: 'dkfjdklfjdl',
-              description: 'lkdjfkldsfj fkldsfjklds djfkdsj fkldsjfksd',
-              rating: true,
             ),
 
             // Add to Basket Button
