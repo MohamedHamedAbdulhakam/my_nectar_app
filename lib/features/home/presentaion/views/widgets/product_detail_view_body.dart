@@ -1,13 +1,14 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/widgets/carouse_slider_details_view.dart';
+import 'package:my_nectar_app/features/home/presentaion/views/widgets/three_point_under_carouse_slider.dart';
 
 import '../../../../../core/widgets/custom_button.dart';
 import 'increament_and_decreament_section_in_deatail_view.dart';
 
 class ProductDetailViewBody extends StatelessWidget {
-   ProductDetailViewBody({super.key});
-final List<String> imagePaths = [
+  ProductDetailViewBody({super.key});
+  final List<String> imagePaths = [
     'assets/banana.png',
   ];
 
@@ -15,9 +16,12 @@ final List<String> imagePaths = [
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:IconButton(onPressed: (){
-           Navigator.pop(context); 
-        }, icon:Icon(Icons.drive_folder_upload, color: Colors.black), ) ,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.drive_folder_upload, color: Colors.black),
+        ),
         // leading: const Icon(Icons.arrow_back_ios, color: Colors.black),
         actions: [
           IconButton(
@@ -34,24 +38,18 @@ final List<String> imagePaths = [
         child: Column(
           children: [
             // Product Image
-               CarousSliderDetailsViews(imagePaths: imagePaths),
-            const SizedBox(height: 30,),
-            // Dots indicator placeholder
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.circle, size: 10, color: Colors.grey),
-                SizedBox(width: 5),
-                Icon(Icons.circle, size: 10, color: Colors.green),
-                SizedBox(width: 5),
-                Icon(Icons.circle, size: 10, color: Colors.grey),
-              ],
+            CarousSliderDetailsViews(imagePaths: imagePaths),
+            const SizedBox(
+              height: 30,
             ),
-          const SizedBox(height: 40,),
-            // Product Title and Price Row
-          const Padding(
-              padding:
-                 EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+
+            const ThreePointsUnderCarouseSlider(),
+            const SizedBox(
+              height: 40,
+            ),
+
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -77,12 +75,12 @@ final List<String> imagePaths = [
               ),
             ),
             // Quantity Selector and Price
-          const  Padding(
-              padding:  EdgeInsets.symmetric(horizontal: 16.0),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-               IncreamentAndDecreamentSectionInDetailsView(),
+                  IncreamentAndDecreamentSectionInDetailsView(),
                   Text(
                     '\$4.99',
                     style: TextStyle(
@@ -94,13 +92,13 @@ final List<String> imagePaths = [
               ),
             ),
             // Product Details Section
-          
-           const  ExpansionTile(
+
+            const ExpansionTile(
               title: Text('Product Detail'),
               children: [
                 Padding(
-                  padding:  EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   child: Text(
                     'Apples are nutritious. Apples may be good for weight loss. '
                     'Apples may be good for your heart. As part of a healthful '
@@ -111,18 +109,18 @@ final List<String> imagePaths = [
               ],
             ),
             // Nutritions and Reviews Section
-             const  ExpansionTile(
+            const ExpansionTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Nutritions', style: TextStyle(fontSize: 16)),
-               Text('100gr', style: TextStyle(color: Colors.grey)),
+                  Text('100gr', style: TextStyle(color: Colors.grey)),
                 ],
               ),
               children: [
                 Padding(
-                  padding:  EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   child: Text(
                     'Apples are nutritious. Apples may be good for weight loss. '
                     'Apples may be good for your heart. As part of a healthful '
@@ -132,23 +130,22 @@ final List<String> imagePaths = [
                 ),
               ],
             ),
-             const  ExpansionTile(
-              title:  Row(
-               
-                    children: [
-                      Text('Review', style: TextStyle(fontSize: 16)),
-                      SizedBox(width: 180),
-                      Icon(Icons.star, color: Colors.orange, size: 18),
-                      Icon(Icons.star, color: Colors.orange, size: 18),
-                      Icon(Icons.star, color: Colors.orange, size: 18),
-                      Icon(Icons.star, color: Colors.orange, size: 18),
-                      Icon(Icons.star_half, color: Colors.orange, size: 18),
-                    ],
-                  ),
+            const ExpansionTile(
+              title: Row(
+                children: [
+                  Text('Review', style: TextStyle(fontSize: 16)),
+                  SizedBox(width: 180),
+                  Icon(Icons.star, color: Colors.orange, size: 18),
+                  Icon(Icons.star, color: Colors.orange, size: 18),
+                  Icon(Icons.star, color: Colors.orange, size: 18),
+                  Icon(Icons.star, color: Colors.orange, size: 18),
+                  Icon(Icons.star_half, color: Colors.orange, size: 18),
+                ],
+              ),
               children: [
                 Padding(
-                  padding:  EdgeInsets.symmetric(
-                      horizontal: 16.0, vertical: 8.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   child: Text(
                     'Apples are nutritious. Apples may be good for weight loss. '
                     'Apples may be good for your heart. As part of a healthful '
@@ -158,7 +155,7 @@ final List<String> imagePaths = [
                 ),
               ],
             ),
-            
+
             // Add to Basket Button
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -175,4 +172,3 @@ final List<String> imagePaths = [
     );
   }
 }
-
