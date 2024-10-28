@@ -12,12 +12,14 @@ class ExpantionTileDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return   ExpansionTile(
-      title: Row(
-        children: [
-          Text(title, style: TextStyle(fontSize: 16)),
-          SizedBox(width: 180),
-         widget??Text('') ,
-        ],
+      title: Expanded(
+        child: Row(
+          children: [
+            Text(title, style: TextStyle(fontSize: 16,fontWeight: FontWeight.w600)),
+            SizedBox(width: 150),
+           widget??Text('') ,
+          ],
+        ),
       ),
       children: [
         Padding(
