@@ -1,11 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/widgets/carouse_slider_details_view.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/widgets/expantion_tiles_section.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/widgets/name_of_product.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/widgets/three_point_under_carouse_slider.dart';
+
 import '../../../../../core/widgets/custom_button.dart';
+import 'carouse_slider_details_view.dart';
+import 'expantion_tiles_section.dart';
 import 'increament_and_decreament_section_in_deatail_view.dart';
+import 'name_of_product.dart';
+import 'three_point_under_carouse_slider.dart';
 
 class ProductDetailViewBody extends StatelessWidget {
   ProductDetailViewBody({super.key});
