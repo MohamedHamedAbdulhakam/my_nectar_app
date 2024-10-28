@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:my_nectar_app/core/utils/app_router.dart';
 
 import '../../../../../../core/utils/assets.dart';
 import '../../../../../../core/widgets/custom_button.dart';
@@ -43,7 +45,9 @@ class LoginScreenViewBody extends StatelessWidget {
               const SizedBox(height: 10),
               const ForgetPasswordSection(),
               const SizedBox(height: 30),
-              CustomButton(text: 'Login In', onPressed: () {}),
+              CustomButton(text: 'Login In', onPressed: () {
+                 GoRouter.of(context).push(AppRouter.kExplorView);
+              }),
               const SizedBox(height: 20),
               Center(
                 child: const StatusOfHavingAccountSection(

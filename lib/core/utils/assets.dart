@@ -8,4 +8,5 @@ class Assets {
   static const appleImage = 'assets/apple.png';
   static const bananaImage = 'assets/banana.png';
   static const palsesImage = 'assets/palses.png';
+  static const VegetablesImage = 'assets/vegetablesImage.png';
 }
