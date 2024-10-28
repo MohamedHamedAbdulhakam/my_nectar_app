@@ -26,7 +26,7 @@ class ExpantionTileDetailsView extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Text(
             description,
-            style: TextStyle(color: Colors.grey),
+            style:const  TextStyle(color: Colors.grey),
           ),
         ),
       ],

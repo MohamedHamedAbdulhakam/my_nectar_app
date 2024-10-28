@@ -9,10 +9,11 @@ class CategoriesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(height: 150,
-    // width:400,
+    return SizedBox(
+      height: 150,
+      // width:400,
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
+          scrollDirection: Axis.horizontal,
           itemCount: 10, // Number of items in the list
           itemBuilder: (context, index) {
             return Padding(
@@ -29,12 +30,12 @@ class CategoriesListView extends StatelessWidget {
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
+                    SizedBox(
                         height: 70,
                         width: 70,
                         child: Image.asset(Assets.palsesImage,
                             height: 40, width: 40)),
-                    SizedBox(width: 30),
+                    const SizedBox(width: 30),
                     Text('Pulses',
                         style: Styles.textStyle16.copyWith(
                             color: Colors.black,

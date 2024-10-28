@@ -8,7 +8,7 @@ class NameOfProduct extends StatelessWidget {
   final String nameOfProduct;
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
