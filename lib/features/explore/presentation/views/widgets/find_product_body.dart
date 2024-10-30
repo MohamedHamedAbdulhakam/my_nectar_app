@@ -48,10 +48,15 @@ class FindProductBody extends StatelessWidget {
               itemCount: categories.length,
               itemBuilder: (context, index) {
                 final category = categories[index];
-                return CategoryCard(
-                  title: category['title'] as String,
-                  image: category['image'] as String,
-                  color: category['color'] as Color?,
+                return GestureDetector(
+                  onTap: (){
+                    
+                  },
+                  child: CategoryCard(
+                    title: category['title'] as String,
+                    image: category['image'] as String,
+                    color: category['color'] as Color?,
+                  ),
                 );
               },
             ),

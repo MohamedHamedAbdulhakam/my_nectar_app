@@ -49,8 +49,8 @@ class LoginScreenViewBody extends StatelessWidget {
                  GoRouter.of(context).push(AppRouter.kExplorView);
               }),
               const SizedBox(height: 20),
-              Center(
-                child: const StatusOfHavingAccountSection(
+             const  Center(
+                child:  StatusOfHavingAccountSection(
                   sectionOneText: 'Dont have an account?',
                   sectionTwoText: 'Sign Up ',
                 ),

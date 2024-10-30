@@ -15,7 +15,7 @@ class CaroselSlider extends StatelessWidget {
       options: CarouselOptions(
         autoPlay: true,
         enlargeCenterPage: true,
-        aspectRatio: 386 / 114,
+        aspectRatio:4/1,
         viewportFraction: 0.8,
       ),
       items: imagePaths.map((path) {
