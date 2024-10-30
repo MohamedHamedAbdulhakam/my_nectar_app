@@ -4,6 +4,7 @@ import 'package:my_nectar_app/features/auth/login_screen/presentation/views/logi
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/reset_password_success.dart';
 import 'package:my_nectar_app/features/auth/sign_up/presentation/views/sign_up_view.dart';
 import 'package:my_nectar_app/features/explore/presentation/views/find_product.dart';
+import 'package:my_nectar_app/features/explore/presentation/views/products_view.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/product_details_view.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/home_view.dart';
 import 'package:my_nectar_app/features/on_boarding/presentation/views/on_boarding_view.dart';
@@ -19,6 +20,7 @@ abstract class AppRouter {
   static const kHomeView= '/homeView';
   static const kDetailsView= '/detailsView';
   static const kExplorView= '/explorView';
+   static const kProductView= '/productView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -63,6 +65,11 @@ abstract class AppRouter {
       GoRoute(
           path: kExplorView,
           builder: (context, state) => const FindProductView(),
+          
+        ),
+         GoRoute(
+          path: kProductView,
+          builder: (context, state) => const ProductsView(),
           
         ),
     ],

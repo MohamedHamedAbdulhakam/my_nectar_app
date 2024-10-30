@@ -9,4 +9,7 @@ class Assets {
   static const bananaImage = 'assets/banana.png';
   static const palsesImage = 'assets/palses.png';
   static const VegetablesImage = 'assets/vegetablesImage.png';
+  static const PepperImage = 'assets/pepper.png';
+  
+
 }

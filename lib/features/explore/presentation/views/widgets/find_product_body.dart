@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:my_nectar_app/core/utils/app_router.dart';
 import 'package:my_nectar_app/core/utils/assets.dart';
 import 'package:my_nectar_app/features/explore/presentation/views/widgets/category_card.dart';
 import 'package:my_nectar_app/core/widgets/searsh_button.dart';
@@ -50,7 +52,7 @@ class FindProductBody extends StatelessWidget {
                 final category = categories[index];
                 return GestureDetector(
                   onTap: (){
-                    
+                     GoRouter.of(context).push(AppRouter.kProductView);
                   },
                   child: CategoryCard(
                     title: category['title'] as String,
