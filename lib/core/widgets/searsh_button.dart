@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SearshBottomForHomeView extends StatelessWidget {
-  const SearshBottomForHomeView({
+class SearshButton extends StatelessWidget {
+  const SearshButton({
     super.key,
   });
 

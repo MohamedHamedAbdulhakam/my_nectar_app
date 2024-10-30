@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_nectar_app/core/utils/assets.dart';
 import 'package:my_nectar_app/features/explore/presentation/views/widgets/category_card.dart';
+import 'package:my_nectar_app/core/widgets/searsh_button.dart';
 
 class FindProductBody extends StatelessWidget {
-  const FindProductBody({super.key});
+  FindProductBody({super.key});
+
+  final colors = [Colors.red[50], Colors.yellow[50], Colors.orange[50], Colors.purple[50], Colors.green[50]];
 
   @override
   Widget build(BuildContext context) {
@@ -13,57 +16,48 @@ class FindProductBody extends StatelessWidget {
       (index) => {
         'title': 'Fresh Fruits \n && Vegetables', // Same title for each item
         'image': Assets.VegetablesImage, // Same image for each item
-        'color': Colors.green[50], // Same background color for each item
+        'color': colors[index % colors.length], // Loop through colors
       },
     );
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Find Products', style: TextStyle(color: Colors.black)),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        iconTheme: const IconThemeData(color: Colors.black),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search),
-                hintText: 'Search Store',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                fillColor: Colors.grey[200],
+    return NestedScrollView(
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+        return <Widget>[
+         const  SliverAppBar(
+            title:  Text('Find Products', style: TextStyle(color: Colors.black)),
+            centerTitle: true,
+            backgroundColor: Colors.white,
+            elevation: 0,
+            iconTheme:  IconThemeData(color: Colors.black),
+            floating: true,
+            snap: true,
+          ),
+        ];
+      },
+      body: Column(
+        children: [
+          const SearshButton(),
+          const SizedBox(height: 20),
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // 2 columns
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
               ),
+              itemCount: categories.length,
+              itemBuilder: (context, index) {
+                final category = categories[index];
+                return CategoryCard(
+                  title: category['title'] as String,
+                  image: category['image'] as String,
+                  color: category['color'] as Color?,
+                );
+              },
             ),
-            const SizedBox(height: 20),
-            Expanded(
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, // 2 columns
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                ),
-                itemCount: categories.length,
-                itemBuilder: (context, index) {
-                  final category = categories[index];
-                  return CategoryCard(
-                    title: category['title'] as String,
-                    image: category['image'] as String,
-                    color: category['color'] as Color?,
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 }
-

@@ -6,6 +6,6 @@ class FindProductView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const FindProductBody();
+    return Scaffold(body: FindProductBody());
   }
 }
