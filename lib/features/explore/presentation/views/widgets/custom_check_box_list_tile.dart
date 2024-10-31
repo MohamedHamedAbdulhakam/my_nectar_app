@@ -18,6 +18,7 @@ class _CustomCheckboxListTileState extends State<CustomCheckboxListTile> {
   @override
   Widget build(BuildContext context) {
     return CheckboxListTile(
+      dense: true,
       controlAffinity: ListTileControlAffinity.leading,
       activeColor: keyPrimaryColor,
       value: isChecked,

@@ -25,11 +25,14 @@ class _FilterActionState extends State<FilterAction> {
           child: Text("Category",style: Styles.textStyle26,),
         ),
         CustomCheckboxListTile(
+        
           title: 'Eges',
         ),
         CustomCheckboxListTile(
           title: 'Nodels&&Pasta',
-        ),CustomCheckboxListTile(
+        ),
+        
+        CustomCheckboxListTile(
           title: 'Chips',
         ),CustomCheckboxListTile(
           title: 'Fast Foos',
@@ -48,7 +51,7 @@ class _FilterActionState extends State<FilterAction> {
         ),CustomCheckboxListTile(
           title: 'Friday',
         ),
-        SizedBox(height: 80,),
+        SizedBox(height:150,),
         CustomButton(text: 'Apply Filter', onPressed: () {
           
         },),
