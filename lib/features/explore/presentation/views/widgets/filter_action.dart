@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:my_nectar_app/core/utils/app_router.dart';
 
 import '../../../../../core/utils/styles.dart';
 import '../../../../../core/widgets/custom_button.dart';
@@ -53,7 +55,7 @@ class _FilterActionState extends State<FilterAction> {
         ),
         SizedBox(height:150,),
         CustomButton(text: 'Apply Filter', onPressed: () {
-          
+           GoRouter.of(context).push(AppRouter.kCarttView);
         },),
         SizedBox(height: 10,)
       ],

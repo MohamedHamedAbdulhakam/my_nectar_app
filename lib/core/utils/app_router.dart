@@ -7,6 +7,7 @@ import 'package:my_nectar_app/features/explore/presentation/views/find_product.d
 import 'package:my_nectar_app/features/explore/presentation/views/products_view.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/product_details_view.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/home_view.dart';
+import 'package:my_nectar_app/features/my_cart/presentaion/cart_view.dart';
 import 'package:my_nectar_app/features/on_boarding/presentation/views/on_boarding_view.dart';
 import 'package:my_nectar_app/features/splash/presentation/views/splash_view.dart';
 
@@ -21,6 +22,7 @@ abstract class AppRouter {
   static const kDetailsView= '/detailsView';
   static const kExplorView= '/explorView';
    static const kProductView= '/productView';
+   static const kCarttView= '/cartView';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -70,6 +72,11 @@ abstract class AppRouter {
          GoRoute(
           path: kProductView,
           builder: (context, state) => const ProductsView(),
+          
+        ),
+         GoRoute(
+          path: kCarttView,
+          builder: (context, state) => const CartView(),
           
         ),
     ],
