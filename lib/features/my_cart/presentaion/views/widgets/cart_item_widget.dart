@@ -7,8 +7,9 @@ class CartItem {
   final String quantity;
   final double price;
   final String image;
+ 
 
-  CartItem(
+  CartItem(   
       {required this.name,
       required this.quantity,
       required this.price,
@@ -18,8 +19,8 @@ class CartItem {
 class CartItemWidget extends StatefulWidget {
   final CartItem cartItem;
 
-  CartItemWidget({required this.cartItem});
-
+  CartItemWidget({required this.cartItem, required this.widget});
+ final Widget widget;
   @override
   State<CartItemWidget> createState() => _CartItemWidgetState();
 }
@@ -86,12 +87,11 @@ class _CartItemWidgetState extends State<CartItemWidget> {
             ],
           ),
           const SizedBox(width: 10),
-          IconButton(
-            icon: Icon(Icons.close),
-            onPressed: () {},
-          ),
+          widget
         ],
       ),
     );
   }
+
+ 
 }
