@@ -10,6 +10,8 @@ class Assets {
   static const palsesImage = 'assets/palses.png';
   static const VegetablesImage = 'assets/vegetablesImage.png';
   static const PepperImage = 'assets/pepper.png';
+  static const myAccountPage = 'assets/myPic.jpg';
+  
   
 
 }

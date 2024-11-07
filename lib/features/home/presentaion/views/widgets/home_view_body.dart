@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_nectar_app/constants.dart';
+import 'package:my_nectar_app/features/account/presentation/account_view.dart';
 import 'package:my_nectar_app/features/explore/presentation/views/find_product_view.dart';
+import 'package:my_nectar_app/features/favorite/presentation/favourite_view.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/widgets/shop_view_body.dart';
 import '../../../../../core/widgets/custom_list_view.dart';
 import 'carous_slider_home_view.dart';
@@ -89,13 +91,13 @@ class CartScreen extends StatelessWidget {
 class FavoriteScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Favorite Screen'));
+    return FavouriteView();
   }
 }
 
 class AccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Account Screen'));
+    return AccountView();
   }
 }

@@ -46,7 +46,7 @@ class LoginScreenViewBody extends StatelessWidget {
               const ForgetPasswordSection(),
               const SizedBox(height: 30),
               CustomButton(text: 'Login In', onPressed: () {
-                 GoRouter.of(context).push(AppRouter.kExplorView);
+                 GoRouter.of(context).push(AppRouter.kHomeView);
               }),
               const SizedBox(height: 20),
              const  Center(
