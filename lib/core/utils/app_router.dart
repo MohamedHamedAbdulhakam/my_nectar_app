@@ -3,7 +3,7 @@ import 'package:my_nectar_app/features/auth/login_screen/presentation/views/forg
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/login_view.dart';
 import 'package:my_nectar_app/features/auth/login_screen/presentation/views/reset_password_success.dart';
 import 'package:my_nectar_app/features/auth/sign_up/presentation/views/sign_up_view.dart';
-import 'package:my_nectar_app/features/explore/presentation/views/find_product.dart';
+import 'package:my_nectar_app/features/explore/presentation/views/find_product_view.dart';
 import 'package:my_nectar_app/features/explore/presentation/views/products_view.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/product_details_view.dart';
 import 'package:my_nectar_app/features/home/presentaion/views/home_view.dart';
