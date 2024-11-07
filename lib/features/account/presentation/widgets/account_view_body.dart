@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/core/utils/assets.dart';
-import 'package:my_nectar_app/core/utils/styles.dart';
-import 'package:my_nectar_app/core/widgets/custom_button.dart';
-import 'package:my_nectar_app/features/account/presentation/widgets/identity_section.dart';
-import 'package:my_nectar_app/features/account/presentation/widgets/profile_list_tile.dart';
+
+import '../../../../core/utils/styles.dart';
+import '../../../../core/widgets/custom_button.dart';
+import 'identity_section.dart';
+import 'profile_list_tile.dart';
 
 class AccountViewBody extends StatelessWidget {
   @override
@@ -30,7 +30,7 @@ class AccountViewBody extends StatelessWidget {
             child:   ListView(
              children: [
                 ProfileListTile(
-                  icon: Icons.shopping_bag_outlined,
+                  icon:  Icons.shopping_bag_outlined,
                   title: 'Orders',
                 ),
                 Divider(thickness: .2,),
