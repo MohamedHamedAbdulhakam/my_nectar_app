@@ -21,11 +21,7 @@ class _CartViewBodyState extends State<CartViewBody> {
     // Add more items as needed...
   ];
 
-  void removeItem(int index) {
-    setState(() {
-      cartItems.removeAt(index);
-    });
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +40,7 @@ class _CartViewBodyState extends State<CartViewBody> {
                   cartItem: cartItems[index],
                   widget: IconButton(
                     icon: Icon(Icons.close),
-                    onPressed: () => removeItem(index),
+                    onPressed: () {},
                   ),
                 );
               },

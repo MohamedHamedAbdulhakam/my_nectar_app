@@ -64,7 +64,7 @@ class ProductsViewBody extends StatelessWidget {
             width: 200,
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 8),
-              child: CardSection(),
+              // child: CardSection(),
             ),
           );
         },
