@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/constants.dart';
-import 'package:my_nectar_app/features/account/presentation/account_view.dart';
-import 'package:my_nectar_app/features/explore/presentation/views/find_product_view.dart';
-import 'package:my_nectar_app/features/favorite/presentation/favourite_view.dart';
-import 'package:my_nectar_app/features/home/presentaion/views/widgets/shop_view_body.dart';
-import '../../../../../core/widgets/custom_list_view.dart';
-import 'carous_slider_home_view.dart';
-import 'categoriesa_list_view.dart';
-import '../../../../../core/widgets/searsh_button.dart';
-import 'sliver_app_bar_for_home_view.dart';
-import 'text_section_in_home_view.dart';
+
+import '../../../../../constants.dart';
+import '../../../../account/presentation/account_view.dart';
+import '../../../../explore/presentation/views/find_product_view.dart';
+import '../../../../favorite/presentation/favourite_view.dart';
+import '../../../../my_cart/presentaion/cart_view.dart';
+import 'shop_view_body.dart';
 
 class HomeViewBody extends StatefulWidget {
   HomeViewBody({super.key});
@@ -84,7 +80,7 @@ class ExploreScreen extends StatelessWidget {
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Cart Screen'));
+    return CartView();
   }
 }
 
