@@ -8,7 +8,7 @@ class SearshButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-           padding: const EdgeInsets.fromLTRB(40, 20, 40, 20),
+           padding: const EdgeInsets.fromLTRB(40, 20, 40, 0),
            child: MaterialButton(
              onPressed: () {
                print("Search Store button pressed");

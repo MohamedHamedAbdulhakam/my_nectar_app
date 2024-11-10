@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/constants.dart';
-import 'package:my_nectar_app/features/my_cart/presentaion/views/widgets/cart_view_body.dart';
+
+import '../../../../../constants.dart';
 
 class CartItem {
   final String name;

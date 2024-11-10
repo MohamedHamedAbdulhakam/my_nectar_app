@@ -37,7 +37,7 @@ class _CartViewBodyState extends State<CartViewBody> {
               itemCount: cartItems.length,
               itemBuilder: (context, index) {
                 return CartItemWidget(
-                  cartItem: cartItems,
+                  cartItem: cartItems[index],
                   
                 );
               },

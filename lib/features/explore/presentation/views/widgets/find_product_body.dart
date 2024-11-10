@@ -39,7 +39,7 @@ class FindProductBody extends StatelessWidget {
       body: Column(
         children: [
           const SearshButton(),
-          const SizedBox(height: 20),
+        
           Expanded(
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
