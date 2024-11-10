@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_nectar_app/features/explore/presentation/views/widgets/filter_action.dart';
 
-import '../../../../../core/widgets/card_section.dart';
+import 'filter_action.dart';
 
 class ProductsViewBody extends StatelessWidget {
   const ProductsViewBody({super.key});
