@@ -25,7 +25,7 @@ class ProductsViewBody extends StatelessWidget {
               showModalBottomSheet(
                 context: context,
                 isScrollControlled: true, // Allow the bottom sheet to expand fully
-                shape: RoundedRectangleBorder(
+                   shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
                 ),
                 builder: (BuildContext context) {
