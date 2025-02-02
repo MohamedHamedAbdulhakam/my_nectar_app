@@ -20,7 +20,7 @@ class IdentitySection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Mohamed Hamed',
+              'Mohamed Hamed Hakam',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
